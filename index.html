@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daf Dash: HaMafkid</title>
+<meta name="description" content="Revision games for Bava Metzia, Perek HaMafkid (33b–36a): vocab and the sugya.">
+<meta name="theme-color" content="#0f1830">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f1830;--bg2:#16223f;--card:#1d2c52;--card2:#263a69;--ink:#f6f1e4;--muted:#a3b3d6;--gold:#f5c451;--green:#48d39a;--red:#ff6f6f;--blue:#6fb1ff;--pink:#ff8fc0}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%}
+body{background:radial-gradient(1200px 600px at 50% -10%,#24376b 0,var(--bg) 60%);color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100%}
+#app{max-width:540px;margin:0 auto;padding:12px 14px 40px}
+h1,h2,h3,.disp{font-family:Fredoka,system-ui,sans-serif;margin:0}
+.he{font-family:"Frank Ruhl Libre","Times New Roman",serif;direction:rtl;unicode-bidi:isolate;font-weight:500}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+.top{display:flex;align-items:center;gap:10px;margin-bottom:12px;min-height:44px}
+.top h2{flex:1;font-size:20px}
+.back{width:42px;height:42px;border-radius:12px;background:var(--card);font-size:20px}
+.pill{background:var(--card);border-radius:999px;padding:6px 12px;font-weight:600;font-size:14px;white-space:nowrap}
+.hero{text-align:center;padding:14px 0 6px}
+.hero h1{font-size:40px;letter-spacing:.5px;color:var(--gold);text-shadow:0 3px 0 #0008}
+.hero .sub{color:var(--muted);font-size:14px}
+.hero .he{font-size:26px;display:block;margin-top:2px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+.stat{background:var(--card);border-radius:14px;padding:10px 6px;text-align:center}
+.stat b{display:block;font-family:Fredoka;font-size:20px;color:var(--gold)}
+.stat span{font-size:12px;color:var(--muted)}
+.bar{height:10px;background:#0006;border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--gold));border-radius:99px;transition:width .4s}
+.card{background:var(--card);border-radius:16px;padding:14px;margin:10px 0}
+.lbl{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:10px 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{padding:8px 12px;border-radius:999px;background:#0004;border:2px solid transparent;font-weight:600;font-size:14px}
+.chip.on{background:var(--gold);color:#221a00}
+.sec{font-family:Fredoka;font-size:18px;margin:18px 0 8px;display:flex;align-items:center;gap:8px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mode{background:linear-gradient(160deg,var(--card2),var(--card));border-radius:18px;padding:14px 12px;text-align:left;min-height:108px;position:relative;box-shadow:0 4px 0 #0005;transition:transform .08s}
+.mode:active{transform:translateY(3px);box-shadow:0 1px 0 #0005}
+.mode .ic{font-size:30px;line-height:1}
+.mode b{display:block;font-family:Fredoka;font-size:17px;margin-top:6px}
+.mode small{color:var(--muted);font-size:12.5px;line-height:1.25;display:block}
+.mode .st{position:absolute;top:10px;right:10px;font-size:12px;letter-spacing:1px}
+.mode.wide{grid-column:1/-1;min-height:0;background:linear-gradient(120deg,#6b4a12,#3a2a5e)}
+.btn{display:block;width:100%;padding:14px;border-radius:14px;background:var(--gold);color:#221a00;font-family:Fredoka;font-weight:600;font-size:18px;box-shadow:0 4px 0 #9a7412;margin-top:10px}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 #9a7412}
+.btn.alt{background:var(--card2);color:var(--ink);box-shadow:0 4px 0 #0006}
+.btn.red{background:var(--red);box-shadow:0 4px 0 #9a3030;color:#2a0000}
+.btn.green{background:var(--green);box-shadow:0 4px 0 #1f7d58;color:#00281a}
+.row{display:flex;gap:10px}.row>*{flex:1}
+.prog{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:13px;color:var(--muted)}
+.prog .bar{flex:1}
+.q{background:var(--card);border-radius:18px;padding:18px 16px;text-align:center;font-size:18px;min-height:96px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.q.he,.q .he{font-size:34px;line-height:1.35}
+.q .tag{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:.06em}
+.opts{display:grid;gap:9px;margin-top:12px}
+.opt{background:var(--card2);border-radius:14px;padding:13px 14px;text-align:left;font-size:16px;border:2px solid transparent;box-shadow:0 3px 0 #0005}
+.opt.he{font-size:24px;text-align:right}
+.opt.ok{background:#1e6b4f;border-color:var(--green)}
+.opt.no{background:#6d2a34;border-color:var(--red)}
+.opt:disabled{cursor:default}
+.why{background:#0005;border-left:4px solid var(--gold);border-radius:10px;padding:10px 12px;margin-top:12px;font-size:15px}
+.center{text-align:center}.muted{color:var(--muted)}.big{font-size:56px;line-height:1.1}
+.stars{font-size:44px;letter-spacing:6px}
+.miss{background:#0004;border-radius:12px;padding:10px 12px;margin:8px 0;font-size:14.5px;text-align:left}
+.miss b{color:var(--green)}
+/* rain */
+.arena{position:relative;height:56vh;min-height:330px;background:linear-gradient(#0a1226,#16264d);border-radius:18px;overflow:hidden;touch-action:manipulation}
+.arena::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:repeating-linear-gradient(90deg,var(--red) 0 12px,#0000 12px 20px)}
+.tile{position:absolute;top:0;width:31%;padding:10px 6px;border-radius:14px;background:var(--card2);border:2px solid #fff3;text-align:center;font-size:14.5px;line-height:1.2;box-shadow:0 4px 10px #0007;will-change:transform;user-select:none}
+.tile.he{font-size:21px}
+.tile.ok{background:#1e6b4f;border-color:var(--green)}.tile.no{background:#6d2a34;border-color:var(--red);opacity:.5}
+.hud{display:flex;justify-content:space-between;align-items:center;margin:8px 2px;font-family:Fredoka;font-size:18px}
+/* flash */
+.fc{height:300px;border-radius:22px;background:linear-gradient(160deg,#2b4079,#1d2c52);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;box-shadow:0 8px 0 #0006;touch-action:pan-y;user-select:none;transition:transform .15s,background .15s}
+.fc .he{font-size:42px;line-height:1.3}.fc .en{font-size:22px;color:var(--gold);margin-top:14px;font-weight:600}
+.fc .hint{font-size:13px;color:var(--muted);margin-top:16px}
+/* memory */
+.mem{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mc{aspect-ratio:1/1;border-radius:14px;background:linear-gradient(160deg,#3a55a0,#263a69);display:flex;align-items:center;justify-content:center;padding:6px;text-align:center;font-size:13px;line-height:1.15;box-shadow:0 3px 0 #0006;overflow:hidden}
+.mc.down{font-size:30px;color:#fff5}
+.mc.up{background:var(--ink);color:#1a1a2a}.mc.up.he{font-size:20px}
+.mc.done{background:#1e6b4f;color:var(--ink);opacity:.75}
+/* build */
+.slot{min-height:74px;background:#0005;border:2px dashed #fff3;border-radius:16px;padding:8px;display:flex;flex-wrap:wrap;gap:8px;direction:rtl;align-items:center}
+.pool{display:flex;flex-wrap:wrap;gap:8px;direction:rtl;margin-top:12px;min-height:60px}
+.pc{background:var(--card2);padding:9px 13px;border-radius:12px;font-size:23px;box-shadow:0 3px 0 #0006}
+.slot .pc{background:var(--gold);color:#221a00}
+/* cow */
+.field{position:relative;height:150px;background:linear-gradient(#27407c 0 60%,#2d6b46 60%);border-radius:18px;overflow:hidden}
+.who{position:absolute;bottom:14px;text-align:center;font-size:12px;font-weight:700}.who span{font-size:40px;display:block}
+.who.l{left:8%}.who.r{right:8%}
+.cow{position:absolute;bottom:22px;font-size:44px;left:12%;transition:left .7s cubic-bezier(.5,1.6,.5,1),transform .5s}
+.list .w{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid #fff1}
+.list .w .he{font-size:21px;flex:0 0 auto;max-width:55%}
+.list .w span{font-size:14px;color:var(--muted)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#fff3;margin-left:2px}.dot.f{background:var(--green)}
+@keyframes pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+.pop{animation:pop .25s ease-out}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.shake{animation:shake .25s 2}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+/* =====================================================================
+   DAF DASH — Bava Metzia, Perek HaMafkid (33b–36a)
+   CONTENT lives in this first block so it is easy to extend as the
+   shiur moves on. Add words / cases / phrases with the next daf tag
+   and add that daf to DAFS — everything else updates by itself.
+   ===================================================================== */
+const DAFS = ['33b','34a','34b','35a','35b','36a'];
+
+/* Words: [daf, type, Hebrew/Aramaic, English, confusion-group?]
+   type 'k' = key Gemara word (comes up everywhere), 's' = word from this sugya */
+const WORDS = [
+['33b','s','הַמַּפְקִיד','one who deposits'],
+['33b','s','אֵצֶל חֲבֵירוֹ','with his friend'],
+['33b','s','בְּהֵמָה אוֹ כֵלִים','an animal or utensils'],
+['33b','s','נִגְנְבוּ','they were stolen','stolen'],
+['33b','s','אָבְדוּ','they were lost'],
+['33b','s','שִׁילֵּם','he paid','pay'],
+['33b','s','לִישָּׁבַע','to swear','swear'],
+['33b','s','שׁוֹמֵר חִנָּם','an unpaid guardian','shomer'],
+['33b','s','נִשְׁבָּע וְיוֹצֵא','he swears and goes free','swear'],
+['33b','s','נִמְצָא הַגַּנָּב','the thief was found'],
+['33b','s','תַּשְׁלוּמֵי כֶפֶל','double payment'],
+['33b','s','טָבַח וּמָכַר','he slaughtered or sold it'],
+['33b','s','לְמִי מְשַׁלֵּם','to whom does he pay?','pay'],
+['33b','s','בַּעַל הַפִּקָּדוֹן','the owner of the deposit'],
+['33b','k','צְרִיכִי','both are needed'],
+['33b','k','הֲוָה אָמֵינָא','I would have said'],
+['33b','s','נְפִישׁ טִירְחַהּ','its bother is great'],
+['33b','k','מַתְקֵיף לַהּ','he challenges it','obj'],
+['33b','s','אֵין אָדָם מַקְנֶה','a person cannot transfer ownership'],
+['33b','s','דָּבָר שֶׁלֹּא בָּא לָעוֹלָם','something that has not yet come into the world'],
+['33b','k','הָנֵי מִילֵּי','that only applies (when…)'],
+['33b','k','אֲבָל הָכָא','but here','here'],
+
+['34a','k','מִי יֵימַר','who says (that it will happen)?'],
+['34a','k','דִּלְמָא','perhaps','perhaps'],
+['34a','s','מוֹדֵי וּמִפְּטַר','he admits and is exempt'],
+['34a','k','נַעֲשָׂה כְּאוֹמֵר לוֹ','it is as if he said to him'],
+['34a','k','מֵעַכְשָׁיו','from now'],
+['34a','k','אִי הָכִי','if so','ifso'],
+['34a','s','גִּיזּוֹתֶיהָ וּוַלְדוֹתֶיהָ','its shearings and its babies'],
+['34a','k','חוּץ מִ…','except for…'],
+['34a','k','תַּנְיָא','it was taught in a baraita','taught'],
+['34a','k','אִיכָּא דְּאָמְרִי','some say'],
+['34a','k','מַאי בֵּינַיְיהוּ','what is the difference between them?'],
+['34a','k','אִי נָמֵי','or alternatively'],
+['34a','s','הֲרֵינִי מְשַׁלֵּם','I am going to pay','pay'],
+['34a','k','אַף עַל פִּי','even though'],
+['34a','k','תְּנַן','we learned in a Mishnah','taught'],
+['34a','k','אֵימָא סֵיפָא','look at the end (of the Mishnah)'],
+['34a','k','לֵיכָּא לְמִשְׁמַע מִינַּהּ','you cannot prove anything from it','prove'],
+['34a','k','תַּנְיָא כְּוָתֵיהּ','a baraita agrees with him','taught'],
+['34a','s','פָּשַׁעְתִּי','I was careless','negl'],
+['34a','s','שׁוֹמֵר שָׂכָר','a paid guardian','shomer'],
+['34a','s','שׁוֹאֵל','a borrower (of an object)','borrow'],
+['34a','s','שׂוֹכֵר','a renter'],
+['34a','s','שְׁבוּרָה וּמֵתָה','injured or died'],
+['34a','s','מֵתָה מֵחֲמַת מְלָאכָה','it died because of the work','died'],
+['34a','k','לָא שְׁכִיחַ','it is not common'],
+['34a','k','מַאי טַעְמָא','what is the reason?','why'],
+['34a','s','כׇל הֲנָאָה שֶׁלּוֹ','all the benefit is his'],
+['34a','k','לִישָּׁנָא קַמָּא','the first version'],
+['34a','k','לִישָּׁנָא בָּתְרָא','the last version'],
+['34a','k','תְּיוּבְתָּא','a knock-out disproof','obj'],
+['34a','k','מִי דָּמֵי','are they really similar?'],
+['34a','k','הָתָם','there','here'],
+['34a','k','שְׁמַע מִינַּהּ','learn from it (this proves it)','prove'],
+['34a','k','דַּוְקָא','exactly / specifically'],
+['34a','k','גַּבֵּי הֲדָדֵי','next to each other / together'],
+['34a','k','פְּשִׁיטָא','it is obvious!'],
+
+['34b','k','חָזַר וְאָמַר','he then went back and said'],
+['34b','k','מִי אָמְרִינַן','do we say…?'],
+['34b','k','אוֹ דִלְמָא','or perhaps','perhaps'],
+['34b','s','הָדַר בֵּיהּ','he changed his mind'],
+['34b','k','לָא שְׁנָא','there is no difference'],
+['34b','s','שׁוּתָּפִין','partners'],
+['34b','k','תֵּיקוּ','it stands — no answer'],
+['34b','s','מַשְׁבִּיעִין אוֹתוֹ','we make him swear','swear'],
+['34b','s','שֶׁאֵינָהּ בִּרְשׁוּתוֹ','that it is not in his possession'],
+['34b','k','חָיְישִׁינַן','we are worried'],
+['34b','s','שֶׁמָּא עֵינָיו נָתַן בָּהּ','maybe he has set his eyes on it','perhaps'],
+['34b','k','מֵיתִיבִי','they ask a question (from a Mishnah or baraita)','obj'],
+['34b','s','מַשְׁכּוֹן','collateral (security for a loan)'],
+['34b','s','מַלְוֶה','a lender'],
+['34b','s','לֹוֶה','a borrower (of money)','borrow'],
+['34b','s','פָּטוּר','exempt'],
+['34b','s','חַיָּיב','liable (must pay)','pay'],
+['34b','s','מוֹדֶה מִקְצָת הַטַּעֲנָה','he admits part of the claim'],
+['34b','k','אַהֵיָיא','about which case?'],
+['34b','k','אִילֵּימָא','if you say…'],
+['34b','k','רֵישָׁא','the first part (of the Mishnah)'],
+['34b','k','סֵיפָא','the last part (of the Mishnah)'],
+
+['35a','k','אִם אִיתָא','if it is really so','ifso'],
+['35a','k','הֵיכִי מָצֵי','how can he?'],
+['35a','s','עֵדִים שֶׁנִּשְׂרְפָה','witnesses that it was burnt'],
+['35a','k','מֵהֵיכָא מַיְיתֵי לַהּ','from where will he bring it?'],
+['35a','k','סוֹף סוֹף','in the end / after all','end'],
+['35a','k','בִּשְׁלָמָא','it makes sense for… (but…)'],
+['35a','s','עָיֵיל וְנָפֵק','comes in and goes out'],
+['35a','k','גְּזֵירָה','a decree (of the Chachamim)'],
+['35a','k','תְּחִילָּה','first'],
+['35a','s','גִּילְגּוּל שְׁבוּעָה','an extra oath "rolled on" to another oath','swear'],
+['35a','s','מַאֲמִינוֹ','he trusts him'],
+['35a','k','קִים לֵיהּ','he knows it for certain'],
+['35a','k','הָהוּא גַּבְרָא','a certain man'],
+['35a','s','כִּיפֵּי','jewels (earrings)'],
+['35a','k','הַב לִי','give me'],
+['35a','k','לָא יָדַעְנָא','I do not know'],
+['35a','k','הֵיכָא','where?'],
+['35a','k','אֲתָא לְקַמֵּיהּ דְּ…','he came before… (to be judged)'],
+['35a','s','פְּשִׁיעוּתָא','carelessness (negligence)','negl'],
+['35a','s','זִיל שַׁלֵּים','go and pay!','pay'],
+['35a','s','אַפַּדְנָא','a mansion'],
+['35a','k','לְסוֹף','in the end','end'],
+['35a','s','אִישְׁתְּכַח','it was found'],
+['35a','s','אִיַּקּוּר','it went up in value'],
+['35a','k','שַׁפִּיר עֲבַד','he did the right thing'],
+['35a','s','אַטְרְחֵיהּ לְבֵי דִינָא','he put him to the trouble of going to bet din'],
+['35a','k','לְמֵימְרָא','is that to say…?'],
+['35a','s','שׁוּמָא הָדַר','seized property goes back (if he pays)'],
+['35a','k','שָׁאנֵי הָתָם','it is different there','here'],
+['35a','s','בְּטָעוּת','by mistake'],
+['35a','s','תְּרֵיסַר יַרְחֵי שַׁתָּא','twelve months of the year'],
+['35a','k','לְעוֹלָם','always / forever'],
+['35a','k','וְהִלְכְתָא','and the halacha is'],
+['35a','s','הַיָּשָׁר וְהַטּוֹב','what is right and good'],
+['35a','s','בַּעַל חוֹב','a creditor (someone owed money)'],
+['35a','s','זַבְּנַהּ','he sold it'],
+
+['35b','k','פְּלִיגִי בַּהּ','they argue about it'],
+['35b','k','חַד אָמַר','one said'],
+['35b','k','מַאן דְּאָמַר','the one who says'],
+['35b','k','סָבַר','he holds (he thinks)'],
+['35b','s','זְבִינֵי מְעַלְּיָא','a proper sale'],
+['35b','s','מֵחֲמַת כִּיסּוּפָא','because of embarrassment'],
+['35b','k','מֵאֵימַת','from when?'],
+['35b','s','אָכֵיל פֵּירֵי','he eats the produce'],
+['35b','s','אַדְרַכְתָּא','a bet din document allowing him to seize property'],
+['35b','s','יְמֵי אַכְרַזְתָּא','the days of announcement'],
+['35b','s','הִשְׁאִילָהּ לְאַחֵר','he lent it to someone else'],
+['35b','s','מֵתָה כְּדַרְכָּהּ','it died naturally','died'],
+['35b','k','כֵּיצַד','how?'],
+['35b','s','עוֹשֶׂה סְחוֹרָה','he does business'],
+['35b','s','תַּחְזוֹר פָּרָה לַבְּעָלִים','the cow goes back to the owner'],
+['35b','k','מִכְּדֵי','now think about it…'],
+['35b','s','בְּמַאי קָנֵי','with what does he acquire it?'],
+['35b','s','דַּל אַנְתְּ','take yourself out of it'],
+['35b','k','מִי סָבְרַתְּ','do you really think…?'],
+['35b','s','מִשְּׁעַת מִיתָה','from the moment of death'],
+['35b','s','לְהָפִיס דַּעְתּוֹ','to put his mind at rest'],
+['35b','k','פְּעָמִים','sometimes'],
+['35b','k','הֵיכִי דָּמֵי','what is the case?'],
+['35b','s','אַגְרַהּ','he rented it'],
+['35b','s','שַׁיְילַהּ','he borrowed it','borrow'],
+['35b','s','מְאָה יוֹמֵי','a hundred days'],
+['35b','k','חֲדָא','one'],
+['35b','s','בְּעֵינָא','still here as it was (intact)'],
+['35b','k','לִגְמָרֵי','completely'],
+
+['36a','s','כְּפִירַת מָמוֹן','denying that he owes money'],
+['36a','s','בִּיטּוּי שְׂפָתַיִם','a statement of the lips'],
+['36a','s','נֶאֶנְסָה','it was lost by an accident he could not prevent','died'],
+['36a','k','בֵּין כָּךְ וּבֵין כָּךְ','either way'],
+['36a','k','תַּרְוַיְיהוּ','both of them'],
+['36a','k','מַאי קָא מַשְׁמַע לַן','what is he teaching us?'],
+['36a','k','לְאַפּוֹקֵי מִ…','to exclude (the opinion of…)'],
+['36a','k','שֶׁנֶּאֱמַר','as it says (in a pasuk)'],
+['36a','k','אִתְּמַר','it was stated (by Amoraim)','taught'],
+['36a','s','שׁוֹמֵר שֶׁמָּסַר לְשׁוֹמֵר','a guardian who handed it to another guardian','shomer'],
+['36a','k','לְטַעְמֵיהּ דְּ…','according to the reasoning of…'],
+['36a','k','לָא מִבַּעְיָא','there is no need to say…'],
+['36a','k','אֶלָּא אֲפִילּוּ','but even'],
+['36a','s','עַלּוֹיֵי עַלְּיַיהּ','he made it better'],
+['36a','s','גָּרוֹעֵי גָּרְעַהּ','he made it worse'],
+['36a','s','בֶּן דַּעַת','a sensible person'],
+['36a','s','אֵין רְצוֹנִי','I do not want'],
+['36a','s','בְּיַד אַחֵר','in someone else\'s hand'],
+['36a','k','לָאו בְּפֵירוּשׁ אִתְּמַר','it was not said outright'],
+['36a','k','מִכְּלָלָא','it was worked out (from something else)'],
+['36a','s','גִּינָּאֵי','gardeners'],
+['36a','k','כֹל יוֹמָא','every day'],
+['36a','s','מָרַיְיהוּ','their spades'],
+['36a','s','סָבְתָּא','an old woman'],
+['36a','k','יוֹמָא חַד','one day'],
+['36a','s','שְׁמַע קָלָא','he heard a sound'],
+['36a','s','בֵּי הִלּוּלָא','a wedding hall'],
+['36a','s','נְפַק אֲזַל','he went out and went off'],
+['36a','s','אִגְּנוּב','(the spades) got stolen','stolen'],
+['36a','s','פַטְרֵיהּ','he ruled him exempt'],
+['36a','k','וְלָא הִיא','but that is not right'],
+['36a','k','אֵיתִיבֵיהּ','he asked him a question (from a source)','obj'],
+['36a','k','הָכָא בְּמַאי עָסְקִינַן','what case are we dealing with here?','here'],
+['36a','s','רְשׁוּת','permission'],
+['36a','s','לְדַעְתָּךְ','as you see fit'],
+['36a','k','מֵתִיב','he asks a question (from a source)','obj'],
+['36a','s','מָעוֹת','coins'],
+['36a','s','קְטַנִּים','children (under bar mitzvah)'],
+['36a','k','אַמַּאי','why?','why'],
+['36a','k','נֵימָא לֵיהּ','let him say to him'],
+['36a','s','כְּדֶרֶךְ הַשּׁוֹמְרִים','the way guardians guard'],
+];
+
+/* Lines from the daf to rebuild: [daf, [pieces in order], English] */
+const LINES = [
+['33b',['שׁוֹמֵר חִנָּם','נִשְׁבָּע','וְיוֹצֵא'],'An unpaid guardian swears and goes free'],
+['33b',['נִמְצָא הַגַּנָּב','מְשַׁלֵּם','תַּשְׁלוּמֵי כֶפֶל'],'If the thief is found, he pays double'],
+['33b',['אֵין אָדָם','מַקְנֶה','דָּבָר','שֶׁלֹּא בָּא','לָעוֹלָם'],'A person cannot transfer something that has not yet come into the world'],
+['34a',['הֲרֵי פָּרָתִי','קְנוּיָה לְךָ','מֵעַכְשָׁיו'],'My cow is yours from now'],
+['34a',['כֵּיוָן שֶׁאָמַר','הֲרֵינִי מְשַׁלֵּם','אַף עַל פִּי','שֶׁלֹּא שִׁילֵּם'],'Once he said "I am going to pay", even though he has not paid'],
+['34a',['מֵתָה','מֵחֲמַת מְלָאכָה','לָא שְׁכִיחַ'],'Dying because of the work is not common'],
+['34b',['חָיְישִׁינַן','שֶׁמָּא','עֵינָיו','נָתַן בָּהּ'],'We are worried that maybe he set his eyes on it'],
+['34b',['שֶׁמָּא יִשָּׁבַע זֶה','וְיוֹצִיא הַלָּה','אֶת הַפִּקָּדוֹן'],'Maybe this one will swear and the other will produce the deposit'],
+['35a',['כֹּל','לָא יָדַעְנָא','פְּשִׁיעוּתָא הִיא'],'Every "I do not know" is carelessness'],
+['35a',['הָדְרִי כִּיפֵּי','לְמָרַיְיהוּ','וְהָדְרָא אַפַּדְנָא','לְמָרַהּ'],'The jewels go back to their owner and the mansion goes back to its owner'],
+['35a',['שׁוּמָא','הָדַר','לְעוֹלָם'],'Seized property can always go back'],
+['35b',['יִשָּׁבַע הַשּׂוֹכֵר','שֶׁמֵּתָה כְּדַרְכָּהּ','וְהַשּׁוֹאֵל','יְשַׁלֵּם לַשּׂוֹכֵר'],'The renter swears it died naturally, and the borrower pays the renter'],
+['35b',['כֵּיצַד הַלָּה','עוֹשֶׂה סְחוֹרָה','בְּפָרָתוֹ','שֶׁל חֲבֵירוֹ'],'How can this man do business with his friend\'s cow?'],
+['35b',['דַּל אַנְתְּ','וְדַל שְׁבוּעֲתָךְ'],'Take yourself and your oath out of it'],
+['35b',['מִשְּׁעַת מִיתָה','הוּא','דְּקָנֵי'],'It is from the moment of death that he acquires it'],
+['36a',['כְּפִירַת מָמוֹן','אָשָׁם','בִּיטּוּי שְׂפָתַיִם','חַטָּאת'],'Denying money — an asham; a statement of the lips — a chatat'],
+['36a',['שׁוֹמֵר','שֶׁמָּסַר','לְשׁוֹמֵר'],'A guardian who handed over to a guardian'],
+['36a',['אֵין רְצוֹנִי','שֶׁיְּהֵא פִּקְדוֹנִי','בְּיַד אַחֵר'],'I do not want my deposit to be in someone else\'s hand'],
+['36a',['הָכָא','בְּמַאי','עָסְקִינַן'],'What case are we dealing with here?'],
+];
+
+/* Cases: {d: daf, q, o:[CORRECT, wrong, wrong, …], y: why} — first option is the right one */
+const CASES = [
+{d:'33b',q:'Reuven is looking after a cow for free. It is stolen. He decides to pay rather than swear. Then the thief is caught. Who gets the double payment (kefel)?',o:['Reuven, the guardian','The owner of the cow','They split it','Nobody — the thief keeps it'],y:'Mishnah: שִׁילֵּם וְלֹא רָצָה לִישָּׁבַע — the kefel goes to לְמִי שֶׁהַפִּקָּדוֹן אֶצְלוֹ, the guardian.'},
+{d:'33b',q:'Same story, but this time the guardian swore that it was stolen and did not pay. The thief is caught. Who gets the kefel?',o:['The owner of the deposit','The guardian','Bet din','They split it'],y:'Mishnah: נִשְׁבַּע וְלֹא רָצָה לְשַׁלֵּם — the thief pays לְבַעַל הַפִּקָּדוֹן.'},
+{d:'33b',q:'The guardian paid the owner for a stolen ox. The thief had slaughtered it. How much does the thief pay, and to whom?',o:['Five times — to the guardian','Double — to the owner','Five times — to the owner','Just the value — to the guardian'],y:'טָבַח וּמָכַר: four for a sheep, five for an ox — and since the guardian paid, it goes to him.'},
+{d:'33b',q:'If the Mishnah had only said "an animal", why would I think the rule does not apply to utensils?',o:['An animal is a lot of bother to look after, so the owner is happy to give him the kefel; utensils are not','Utensils cannot be stolen','Utensils have no kefel','Animals are worth more'],y:'צְרִיכִי: an animal is נְפִישׁ טִירְחַהּ — to bring it in and take it out. I would have said only then does the owner give up the kefel.'},
+{d:'33b',q:'If the Mishnah had only said "utensils", why would I think the rule does not apply to an animal?',o:['With an animal the thief might pay four or five times, which is a lot to give away','Animals cannot be deposited','An animal is easy to look after','Animals never get stolen'],y:'With utensils the kefel is small. With an animal there could be אַרְבָּעָה וַחֲמִשָּׁה — I would say the owner does not give that away.'},
+{d:'33b',q:'What is Rami bar Chama\'s problem with the guardian getting the kefel?',o:['You cannot transfer something that has not yet come into the world','The guardian was careless','The thief might run away','Kefel always goes to bet din'],y:'אֵין אָדָם מַקְנֶה דָּבָר שֶׁלֹּא בָּא לָעוֹלָם — when the owner handed over the cow, there was no kefel yet.'},
+{d:'34a',q:'How does Rava answer Rami bar Chama?',o:['It is as if the owner said: "If it is stolen and you choose to pay me, my cow is yours from now"','Rabbi Meir says you can transfer anything','The kefel is a present from the thief','The guardian owned the cow all along'],y:'נַעֲשָׂה כְּאוֹמֵר לוֹ… הֲרֵי פָּרָתִי קְנוּיָה לְךָ מֵעַכְשָׁיו — the cow itself exists, and the kefel follows the cow.'},
+{d:'34a',q:'The guardian paid for the stolen cow. While he was looking after it, it had a calf. Who gets the calf?',o:['The owner','The guardian','The thief','They split it'],y:'The baraita says חוּץ מִגִּיזּוֹתֶיהָ וּוַלְדוֹתֶיהָ. Rabbi Zeira: the owner gives the cow "from now" except for its shearings and babies.'},
+{d:'34a',q:'Why does the owner give away the kefel but not the calves and wool?',o:['People give away profit that comes from outside, but not profit from the animal\'s own body','Calves are worth more than kefel','The guardian does not want them','The Torah says so'],y:'שְׁבָחָא דְּאָתֵא מֵעָלְמָא — he gives; שְׁבָחָא דְּמִגּוּפַהּ — he does not.'},
+{d:'34a',q:'In the second version, Rava says the cow becomes the guardian\'s "just before it is stolen". If the cow was standing in a marsh when it was stolen, what happens?',o:['He does not acquire it — it was not in his property at that moment','He acquires it anyway','The owner gets double','The thief is exempt'],y:'מַאי בֵּינַיְיהוּ? …אִי נָמֵי דְּקָיְימָא בַּאֲגַם. In version one it was already his "from now"; in version two it must be in his property right before the theft.'},
+{d:'34a',q:'Rabbi Yochanan says "שִׁילֵּם" in the Mishnah does not mean he actually paid. What does it mean?',o:['Once he says "I am going to pay", he gets the kefel','He paid half','He swore he would pay','He gave collateral'],y:'כֵּיוָן שֶׁאָמַר הֲרֵינִי מְשַׁלֵּם, אַף עַל פִּי שֶׁלֹּא שִׁילֵּם. A baraita about a renter backs him up.'},
+{d:'34a',q:'An unpaid guardian says "I was careless" (פָּשַׁעְתִּי). Does he get the kefel?',o:['Yes — he could have got out of paying by saying it was stolen','No — he admitted he did wrong','Only if he pays in cash','Only half'],y:'Rav Papa: דְּאִי בָּעֵי פָּטַר נַפְשֵׁיהּ בִּגְנֵיבָה — he chose to make himself pay, so the owner gives him the kefel.'},
+{d:'34a',q:'A paid guardian says "it was stolen". Why does he get the kefel?',o:['He could have got out of paying by claiming it was injured or died','A paid guardian always gets kefel','Because he is paid','He does not get it'],y:'Rav Papa: דְּאִי בָּעֵי פָּטַר נַפְשֵׁיהּ בִּשְׁבוּרָה וּמֵתָה.'},
+{d:'34a',q:'According to Abaye (as Rav Zevid quotes him), when does a borrower get the kefel?',o:['Only when he actually pays','As soon as he says "I will pay"','Never','When he swears'],y:'שׁוֹאֵל עַד שֶׁיְּשַׁלֵּם — because כׇל הֲנָאָה שֶׁלּוֹ, the owner does not give him kefel just for words.'},
+{d:'34a',q:'A baraita says the borrower "קִידֵּם וְשִׁילֵּם". Rav Papa wants to say it means "he went ahead and said". How does the Gemara prove it means really paid?',o:['The baraitot about a renter ("he said") and a borrower ("he went ahead") were taught together, so the difference is on purpose','A pasuk says so','Rav Papa changed his mind','It does not prove it'],y:'They asked the Tannaim of Rabbi Chiya and Rabbi Oshaya, who said: גַּבֵּי הֲדָדֵי תַּנְיָין.'},
+{d:'34b',q:'He said "I am not paying", then said "I am going to pay". What is the din?',o:['Obvious — he gets the kefel; in the end he said he will pay','Teku','He lost it','He must swear first'],y:'פְּשִׁיטָא… הָא קָאָמַר הֲרֵינִי מְשַׁלֵּם.'},
+{d:'34b',q:'He said "I am going to pay", then said "I am not paying". What is the din?',o:['Teku — the Gemara does not decide','He gets the kefel','He loses the kefel','They split it'],y:'Is he backing out, or just pushing the owner off for now? The whole list of questions ends תֵּיקוּ.'},
+{d:'34b',q:'Which of these is NOT one of the Gemara\'s "teku" questions?',o:['The guardian paid with a borrowed coin','He paid half','He borrowed from partners and paid one of them','A woman borrowed and her husband paid'],y:'The list: sons paid, paid to sons, paid half, two cows and paid for one, partners, a woman and her husband.'},
+{d:'34b',q:'Rav Huna says that even a guardian who pays must swear. Swear what, and why?',o:['That it is not in his possession — maybe he set his eyes on it','That he was not careless — to get the kefel','That he will pay — so the owner trusts him','That the thief took it — so bet din can catch him'],y:'מַשְׁבִּיעִין אוֹתוֹ שְׁבוּעָה שֶׁאֵינָהּ בִּרְשׁוּתוֹ… שֶׁמָּא עֵינָיו נָתַן בָּהּ.'},
+{d:'34b',q:'The collateral is lost. Lender: "I lent you a sela; it was worth a shekel (half a sela)." Borrower: "No — it was worth a full sela." Din?',o:['The borrower is exempt — he denies everything','The borrower must swear','The lender pays','They split the difference'],y:'He is denying the whole claim, so there is no oath of modeh b\'miktzat — פָּטוּר.'},
+{d:'34b',q:'Lender: "I lent you a sela; the collateral was worth a shekel." Borrower: "No — it was worth three dinar." Din?',o:['He must swear — he admitted part of the claim','He is exempt','He pays the full shekel','The lender swears and collects everything'],y:'A sela is 4 dinar. The lender claims 2; the borrower admits 1 — מוֹדֶה מִקְצָת הַטַּעֲנָה, חַיָּיב.'},
+{d:'34b',q:'The Mishnah says: "Who swears? The one holding the deposit." Why?',o:['In case the borrower swears and then the lender produces the collateral','Because the lender is richer','Because the borrower is not trusted to swear','Because the lender lost it'],y:'שֶׁמָּא יִשָּׁבַע זֶה וְיוֹצִיא הַלָּה אֶת הַפִּקָּדוֹן — and the borrower\'s oath would be shown to be false.'},
+{d:'35a',q:'The Gemara asks on Rav Huna: if the lender already swore it is not in his possession, how could he produce it? What does Rav Yosef answer?',o:['There are witnesses it was stolen — but he might work hard and get it back','There are witnesses it was burnt','The lender never swears','The borrower swears instead'],y:'Rava said "burnt" — but then where would he bring it from? So Rav Yosef: שֶׁנִּגְנְבָה, and דְּטָרַח וּמַיְיתֵי לַהּ.'},
+{d:'35a',q:'Why is the lender more likely than the borrower to track down the stolen collateral?',o:['He knows who comes in and out of his own house','He is cleverer','He has more money','Bet din helps him'],y:'מַלְוֶה יָדַע מַאן קָא עָיֵיל וְנָפֵק בְּבֵיתֵיהּ.'},
+{d:'35a',q:'How does Rav Ashi read "Who swears?" in the Mishnah?',o:['Both swear — the question is who swears first, and it is the lender','Only the lender swears','Only the borrower swears','Nobody swears'],y:'זֶה נִשְׁבָּע וְזֶה נִשְׁבָּע: the lender that it is not in his possession, the borrower how much it was worth. מַלְוֶה נִשְׁבָּע תְּחִילָּה.'},
+{d:'35a',q:'A man was given jewels to look after. When asked for them he said: "I do not know where I put them." What did Rav Nachman rule?',o:['That is carelessness — go and pay','He swears and is exempt','Wait twelve months','He is exempt — it was an accident'],y:'כֹּל לָא יָדַעְנָא פְּשִׁיעוּתָא הִיא, זִיל שַׁלֵּים.'},
+{d:'35a',q:'He did not pay, so Rav Nachman had his mansion seized. Then the jewels turned up — and had gone up in value. What now?',o:['Jewels back to their owner, mansion back to its owner','The guardian keeps the jewels because he "paid"','The owner keeps both','They sell the jewels and split'],y:'הָדְרִי כִּיפֵּי לְמָרַיְיהוּ, וְהָדְרָא אַפַּדְנָא לְמָרַהּ.'},
+{d:'35a',q:'Rava asked: is this not like our Mishnah, where a guardian who paid gets the profit? Why was Rav Nachman right not to answer?',o:['In the Mishnah he did not drag the owner to bet din; here he did','In the Mishnah it is an animal','Here there was no thief','Rava was too young'],y:'הָתָם לָא אַטְרְחֵיהּ לְבֵי דִינָא, הָכָא אַטְרְחֵיהּ לְבֵי דִינָא.'},
+{d:'35a',q:'Bet din seized a field for a debt. Until when can the debtor pay up and get his field back, according to the halacha?',o:['Always','Until twelve months','Thirty days','Never'],y:'Nehardea said twelve months; Ameimar said always. וְהִלְכְתָא שׁוּמָא הָדַר לְעוֹלָם — because of וְעָשִׂיתָ הַיָּשָׁר וְהַטּוֹב.'},
+{d:'35a',q:'The creditor who got the field sold it to someone else. Can the debtor still get it back by paying?',o:['No — the buyer came for land, not for money','Yes, always','Yes, within twelve months','Only if the buyer agrees to swear'],y:'זַבְּנַהּ, אוֹרְתַהּ, וְיַהֲבַהּ בְּמַתָּנָה — אַדַּעְתָּא דְּאַרְעָא נְחוּת.'},
+{d:'35b',q:'A debtor handed over his field for his debt by himself, without bet din. Rav Acha and Ravina argue whether he can get it back. What is the reason of the one who says he CAN?',o:['He only did it out of embarrassment, so it is not a real sale','Bet din made a mistake','Land always goes back','He paid too much'],y:'מֵחֲמַת כִּיסּוּפָא הוּא דְּאַגְבְּיֵהּ. The other opinion: he did it of his own free will, so it is זְבִינֵי מְעַלְּיָא.'},
+{d:'35b',q:'From when does the creditor eat the produce of the seized field, according to Rava?',o:['From when the days of announcement are over','From when the adrachta reaches his hand','From when the witnesses sign','From the day of the loan'],y:'Rabba: when the adrachta reaches him. Abaye: the witnesses\' signatures acquire it for him. Rava: מִכִּי שְׁלִימוּ יְמֵי אַכְרַזְתָּא.'},
+{d:'35b',q:'Shimon rents a cow from Reuven and lends it to Levi. It dies naturally at Levi\'s. According to the Tanna Kamma, what happens?',o:['Shimon swears it died naturally, and Levi pays Shimon','Levi pays Reuven','Nobody pays','Shimon pays Reuven'],y:'יִשָּׁבַע הַשּׂוֹכֵר שֶׁמֵּתָה כְּדַרְכָּהּ, וְהַשּׁוֹאֵל יְשַׁלֵּם לַשּׂוֹכֵר. A renter is exempt for a natural death; a borrower is liable.'},
+{d:'35b',q:'Same case. What does Rabbi Yosei say?',o:['The cow (its value) goes back to the owner','The renter keeps the payment','Nobody pays','The renter pays double'],y:'כֵּיצַד הַלָּה עוֹשֶׂה סְחוֹרָה בְּפָרָתוֹ שֶׁל חֲבֵירוֹ? אֶלָּא תַּחְזוֹר פָּרָה לַבְּעָלִים.'},
+{d:'35b',q:'Can the owner say to the renter: "Forget you and your oath — I will deal with the borrower myself"?',o:['No — the renter acquired it at the moment of death; the oath is only to put the owner\'s mind at rest','Yes — the oath is what gives the renter the cow','Yes, if he pays the renter','Only according to Rabbi Yosei'],y:'Abaye: מִשְּׁעַת מִיתָה הוּא דְּקָנֵי, וּשְׁבוּעָה כְּדֵי לְהָפִיס דַּעְתּוֹ שֶׁל בַּעַל הַבַּיִת.'},
+{d:'35b',q:'Rabbi Zeira\'s case: rented for 100 days, owner borrowed it back for 90, renter rented again for 80, owner borrowed again for 70 — and it died. How many cows does the owner owe?',o:['Four','One','Two','Three'],y:'For each borrowing he owes a cow, and he must still supply a cow for each rental (Rashi) — four in all.'},
+{d:'35b',q:'Rav Acha of Difti objects: "It is just one cow going in and out!" What does Ravina answer?',o:['Is the cow still here, intact, for him to say that?','There were really four cows','Rabbi Zeira changed his mind','The owner was careless'],y:'וּמִי אִיתַהּ לְפָרָה בְּעֵינָא דְּנֵימָא לֵיהּ הָכִי? It is dead — he must pay what he took on.'},
+{d:'35b',q:'What does Mar bar Rav Ashi say about Rabbi Zeira\'s case?',o:['Only two cows — one for borrowing (to keep) and one for renting (to use, then return)','Four cows','One cow','No cows — it is the owner\'s own animal'],y:'שׁוּם שְׁאֵלָה אַחַת הִיא וְשׁוּם שְׂכִירוּת אַחַת הִיא.'},
+{d:'36a',q:'Which false oath brings an asham?',o:['One that denies money he owes','Any oath said out loud','One made in bet din','One about a cow'],y:'כְּפִירַת מָמוֹן — אָשָׁם. בִּיטּוּי שְׂפָתַיִם — חַטָּאת.'},
+{d:'36a',q:'What is Rabbi Yirmeya coming to teach with his four cases?',o:['Not like Rabbi Ami, who says an oath that judges impose has no "shevuat bituy"','That a borrower is always liable','That a renter is like a paid guardian','That you must not swear at all'],y:'לְאַפּוֹקֵי מִדְּרַבִּי אַמֵּי — who learns from כִּי תִשָּׁבַע that it must be an oath he makes by himself.'},
+{d:'36a',q:'A guardian handed the deposit to another guardian. Who says what?',o:['Rav: exempt. Rabbi Yochanan: liable','Rav: liable. Rabbi Yochanan: exempt','Both say exempt','Both say liable'],y:'אִתְּמַר: שׁוֹמֵר שֶׁמָּסַר לְשׁוֹמֵר, רַב אָמַר פָּטוּר, וְרַבִּי יוֹחָנָן אָמַר חַיָּיב.'},
+{d:'36a',q:'A PAID guardian hands the deposit to an UNPAID guardian (worse guarding). According to Rav, why is he still exempt?',o:['He handed it to a sensible person','The owner agreed','He was paid less','He swore first'],y:'Abaye: even though גָּרוֹעֵי גָּרְעַהּ לִשְׁמִירָתוֹ — דְּהָא מְסָרָהּ לְבֶן דַּעַת.'},
+{d:'36a',q:'An UNPAID guardian hands the deposit to a PAID guardian (better guarding). According to Rabbi Yochanan, why is he still liable?',o:['The owner says: "I do not want my deposit in someone else\'s hand"','A paid guardian is not trusted','He broke his oath','He made a profit'],y:'אֵין רְצוֹנִי שֶׁיְּהֵא פִּקְדוֹנִי בְּיַד אַחֵר.'},
+{d:'36a',q:'The gardener went to the wedding and left the spades with the old woman. They were stolen and Rav exempted him. Why is that NOT proof that Rav holds a guardian who hands over is exempt?',o:['The gardeners themselves left their spades with that old woman every day','The old woman was paid','The gardener swore','Spades are not worth much'],y:'שָׁאנֵי הָתָם דְּכֹל יוֹמָא נָמֵי אִינְהוּ גּוּפַיְיהוּ גַּבַּהּ דְּהַהִיא סָבְתָּא הֲווֹ מַפְקְדִי — they cannot say "we do not want her".'},
+{d:'36a',q:'Rabbi Abba bar Memel asks on Rabbi Yochanan from our Mishnah (the renter who lent the cow). How does Rabbi Ami answer?',o:['The owner gave the renter permission to lend it','The Mishnah is like Rav','The cow died before he lent it','The renter paid extra'],y:'הָכָא בְּמַאי עָסְקִינַן? בְּשֶׁנָּתְנוּ לוֹ רְשׁוּת הַבְּעָלִים לְהַשְׁאִיל.'},
+{d:'36a',q:'"If the owner gave permission, the borrower should pay the OWNER!" What is the answer?',o:['The owner said "lend it as you see fit" — so the borrower is the renter\'s borrower','The owner forgave the debt','Rabbi Yosei disagrees','The borrower already swore'],y:'דַּאֲמַרוּ לֵיהּ: לְדַעְתָּךְ.'},
+{d:'36a',q:'A Mishnah says: if he gave the coins to his SMALL children to guard, he is liable. What does Rami bar Chama work out from that?',o:['If he gave them to his grown-up children he is exempt — so why can the owner not say "I do not want it with someone else"?','Children can never be guardians','Coins must be buried in the ground','He is liable either way'],y:'טַעְמָא דִּקְטַנִּים, הָא גְּדוֹלִים — פָּטוּר. A question on Rabbi Yochanan. Rava\'s answer is on 36b…'},
+];
+
+/* Who said it? {d, s: statement, by: sage} */
+const SAID = [
+{d:'33b',s:'"But a person cannot transfer something that has not yet come into the world!"',by:'Rami bar Chama'},
+{d:'34a',s:'"It is as if he said: when it is stolen and you choose to pay me, my cow is yours from now."',by:'Rava'},
+{d:'34a',s:'"If so, even its shearings and its babies too!"',by:'Rabbi Zeira'},
+{d:'34a',s:'"Paid" does not mean really paid — once he said "I am going to pay", that is enough.',by:'Rabbi Yochanan'},
+{d:'34a',s:'An unpaid guardian who says "I was careless" gets the kefel, because he could have exempted himself with "it was stolen".',by:'Rav Papa'},
+{d:'34a',s:'A borrower only gets the kefel once he actually pays — because all the benefit is his.',by:'Abaye'},
+{d:'34b',s:'"We make him swear that it is not in his possession — maybe he set his eyes on it."',by:'Rav Huna'},
+{d:'34b',s:'"Who swears?" is going on the first part of the Mishnah (the end of the first part).',by:'Shmuel'},
+{d:'35a',s:'The Mishnah is where there are witnesses that it was stolen (and he might work hard and bring it).',by:'Rav Yosef'},
+{d:'35a',s:'"This one swears and that one swears… the lender swears first."',by:'Rav Ashi'},
+{d:'35a',s:'"Every \'I do not know\' is carelessness. Go and pay!"',by:'Rav Nachman'},
+{d:'35a',s:'"I am from Nehardea, and I hold that seized property can always go back."',by:'Ameimar'},
+{d:'35a',s:'"In Usha they decreed: a woman who sold her melog property… the husband takes it back from the buyers."',by:'Rabbi Yosei bar Chanina'},
+{d:'35b',s:'He eats the produce from when the adrachta reaches his hand.',by:'Rabba'},
+{d:'35b',s:'"How can this man do business with his friend\'s cow?"',by:'Rabbi Yosei'},
+{d:'35b',s:'The renter acquires the cow from the moment of death; the oath is only to put the owner\'s mind at rest.',by:'Abaye'},
+{d:'35b',s:'"Sometimes the owner pays several cows to the renter."',by:'Rabbi Zeira'},
+{d:'35b',s:'"Is the cow still here, intact, for him to say that?"',by:'Ravina'},
+{d:'35b',s:'"He only has two cows against him: one for borrowing and one for renting."',by:'Mar bar Rav Ashi'},
+{d:'36a',s:'"Sometimes both bring a chatat, sometimes both bring an asham…"',by:'Rabbi Yirmeya'},
+{d:'36a',s:'An oath that the judges make you swear has no liability for "shevuat bituy".',by:'Rabbi Ami'},
+{d:'36a',s:'A guardian who handed over to a guardian is exempt.',by:'Rav'},
+{d:'36a',s:'A guardian who handed over to a guardian is liable.',by:'Rabbi Yochanan'},
+{d:'36a',s:'"That ruling of Rav was not said outright — it was worked out from the story of the gardeners."',by:'Rav Chisda'},
+{d:'36a',s:'He challenged Rabbi Ami from our Mishnah: "Let the owner say — I do not want my deposit with someone else!"',by:'Rabbi Abba bar Memel'},
+];
+const SAGES = [...new Set(SAID.map(x=>x.by))];
+
+/* Rabbi Yirmeya's grid (35b–36a) */
+const KORBAN = [
+{real:'died naturally',claim:'it was an accident (ones)',r:'Chatat',b:'Chatat',
+ ry:'A renter is exempt either way, so his lie did not save him any money — a chatat.',by:'A borrower is liable either way, so his lie did not save him any money — a chatat.'},
+{real:'was stolen',claim:'it died because of the work',r:'Asham',b:'Asham',
+ ry:'A renter is liable for theft. He lied to get out of paying — denying money — an asham.',by:'A borrower is liable for theft but exempt for "died from work". He lied to get out of paying — an asham.'},
+{real:'died naturally',claim:'it died because of the work',r:'Chatat',b:'Asham',
+ ry:'A renter is exempt either way — no money denied — a chatat.',by:'A borrower is liable for a natural death, and tried to exempt himself with "died from work" — an asham.'},
+{real:'was stolen',claim:'it died naturally',r:'Asham',b:'Chatat',
+ ry:'A renter is liable for theft and loss, and tried to exempt himself with "died naturally" — an asham.',by:'A borrower is liable either way — no money denied — a chatat.'},
+];
+</script>
+
+<script>
+/* ============================ ENGINE ============================ */
+(function(){
+'use strict';
+const app=document.getElementById('app');
+const W=WORDS.map((a,i)=>({i,d:a[0],t:a[1],he:a[2],en:a[3],g:a[4]||''}));
+const KEY='dafdash-hamafkid-v1';
+const DEF={box:{},best:{},xp:0,streak:0,last:'',sound:true,dafs:DAFS.slice(),type:'all',dir:'he'};
+let S=load();
+function load(){try{const j=JSON.parse(localStorage.getItem(KEY)||'null');if(j){const s=Object.assign({},DEF,j);s.dafs=(s.dafs||[]).filter(d=>DAFS.includes(d));if(!s.dafs.length)s.dafs=DAFS.slice();return s}}catch(e){}return JSON.parse(JSON.stringify(DEF))}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+
+/* ---------- helpers ---------- */
+function el(tag,attrs,...kids){const e=document.createElement(tag);if(attrs)for(const k in attrs){const v=attrs[k];if(v==null||v===false)continue;if(k==='class')e.className=v;else if(k==='text')e.textContent=v;else if(k==='html')e.innerHTML=v;else if(k.slice(0,2)==='on')e.addEventListener(k.slice(2),v);else if(k==='style')e.style.cssText=v;else e.setAttribute(k,v)}
+ for(const c of kids.flat()){if(c==null||c===false)continue;e.append(c.nodeType?c:document.createTextNode(c))}return e}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+const rnd=a=>a[Math.floor(Math.random()*a.length)];
+let cleanups=[];
+function cleanup(){cleanups.forEach(f=>{try{f()}catch(e){}});cleanups=[]}
+function later(fn,ms){const t=setTimeout(fn,ms);cleanups.push(()=>clearTimeout(t));return t}
+function screen(title,...nodes){cleanup();app.innerHTML='';
+ if(title!=null)app.append(el('div',{class:'top'},el('button',{class:'back','aria-label':'Back',onclick:home},'←'),el('h2',{text:title}),el('span',{class:'pill',text:'⭐ '+S.xp})));
+ app.append(...nodes.flat(Infinity).filter(Boolean));window.scrollTo(0,0)}
+const box=w=>S.box[w.he]||0;
+function mark(w,ok){if(!w)return;S.box[w.he]=ok?Math.min(3,box(w)+1):0;save()}
+function active(){let a=W.filter(w=>S.dafs.includes(w.d));if(S.type!=='all')a=a.filter(w=>w.t===S.type);return a}
+function inDaf(arr){return arr.filter(x=>S.dafs.includes(x.d))}
+function pickWords(n){return shuffle(active()).sort((a,b)=>box(a)-box(b)+(Math.random()-.5)*1.6).slice(0,n)}
+const rankTable=[[0,'Beginner'],[40,'Talmid'],[120,'Chaver'],[300,'Lamdan'],[600,'Masmid'],[1000,'Talmid Chacham']];
+const rank=()=>rankTable.filter(r=>S.xp>=r[0]).pop()[1];
+const today=()=>{const d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()};
+function touchStreak(){const t=today();if(S.last===t)return;const y=new Date();y.setDate(y.getDate()-1);const ys=y.getFullYear()+'-'+(y.getMonth()+1)+'-'+y.getDate();S.streak=(S.last===ys?S.streak:0)+1;S.last=t;save()}
+
+/* ---------- sound ---------- */
+let AC=null;
+function beep(kind){if(!S.sound)return;try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();
+ const seq={ok:[[660,.07],[880,.1]],no:[[200,.16]],win:[[523,.09],[659,.09],[784,.09],[1047,.18]],tap:[[440,.04]]}[kind]||[];let t=AC.currentTime;
+ for(const [f,d] of seq){const o=AC.createOscillator(),g=AC.createGain();o.type=kind==='no'?'sawtooth':'triangle';o.frequency.value=f;g.gain.setValueAtTime(.12,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g).connect(AC.destination);o.start(t);o.stop(t+d);t+=d}}catch(e){}}
+
+/* ---------- question makers ---------- */
+function vocabQ(w,n,dir){n=n||4;dir=dir||S.dir;if(dir==='mix')dir=Math.random()<.5?'he':'en';
+ const ok=x=>x!==w&&x.en!==w.en&&x.he!==w.he&&!(w.g&&x.g===w.g);
+ const act=new Set(active());let pool=shuffle(W.filter(ok));const near=pool.filter(x=>act.has(x));if(near.length>=n-1)pool=near;
+ const ds=[],seen=new Set();for(const x of pool){if(seen.has(x.en))continue;seen.add(x.en);ds.push(x);if(ds.length===n-1)break}
+ const he=dir==='he';
+ return {d:w.d,w,q:he?w.he:w.en,qHe:he,sub:he?'What does it mean?':'How does the Gemara say it?',
+  opts:shuffle([w,...ds]).map(x=>({t:he?x.en:x.he,he:!he,ok:x===w})),ans:he?w.en:w.he,why:''}}
+function caseQ(c){return {d:c.d,q:c.q,opts:shuffle(c.o.map((t,i)=>({t,ok:i===0}))),ans:c.o[0],why:c.y}}
+function saidQ(x){const ds=shuffle(SAGES.filter(s=>s!==x.by)).slice(0,3);
+ return {d:x.d,q:x.s,sub:'Who said it?',opts:shuffle([x.by,...ds]).map(t=>({t,ok:t===x.by})),ans:x.by,why:''}}
+function korbanQs(){const qs=[];KORBAN.forEach(k=>{[['renter','r','ry'],['borrower','b','by']].forEach(([who,f,y])=>{
+  qs.push({d:'36a',q:'The cow really '+k.real+'. Both swore that '+k.claim+'. What does the '+who.toUpperCase()+' bring?',opts:['Chatat','Asham'].map(t=>({t,ok:t===k[f]})),ans:k[f],why:k[y]})})});
+ return shuffle(qs)}
+
+/* ---------- HOME ---------- */
+function stars(n){return '★★★'.slice(0,n)+'☆☆☆'.slice(0,3-n)}
+function modeBtn(key,ic,name,desc,fn,wide){const b=S.best[key];
+ return el('button',{class:'mode'+(wide?' wide':''),onclick:()=>{beep('tap');fn()}},el('span',{class:'st',text:b?stars(b.s):''}),el('div',{class:'ic',text:ic}),el('b',{text:name}),el('small',{text:desc+(b&&b.n!=null?' · best '+b.n:'')}))}
+function home(){const all=W.length,mast=W.filter(w=>box(w)>=2).length,act=active();
+ const chips=el('div',{class:'chips'},DAFS.map(d=>el('button',{class:'chip'+(S.dafs.includes(d)?' on':''),text:d,onclick:()=>{const i=S.dafs.indexOf(d);if(i>=0){if(S.dafs.length>1)S.dafs.splice(i,1)}else S.dafs.push(d);save();home()}})),
+   el('button',{class:'chip',text:'All',onclick:()=>{S.dafs=DAFS.slice();save();home()}}));
+ const seg=(lab,key,opts)=>[el('div',{class:'lbl',text:lab}),el('div',{class:'chips'},opts.map(([v,t])=>el('button',{class:'chip'+(S[key]===v?' on':''),text:t,onclick:()=>{S[key]=v;save();home()}})))];
+ screen(null,
+  el('div',{class:'hero'},el('h1',{text:'Daf Dash'}),el('span',{class:'he',text:'הַמַּפְקִיד'}),el('div',{class:'sub',text:'Bava Metzia · Perek 3 · '+DAFS[0]+'–'+DAFS[DAFS.length-1]})),
+  el('div',{class:'stats'},
+   el('div',{class:'stat'},el('b',{text:'⭐ '+S.xp}),el('span',{text:rank()})),
+   el('div',{class:'stat'},el('b',{text:'🔥 '+S.streak}),el('span',{text:'day streak'})),
+   el('div',{class:'stat'},el('b',{text:mast+'/'+all}),el('span',{text:'words known'}))),
+  el('div',{class:'bar'},el('i',{style:'width:'+Math.round(100*mast/all)+'%'})),
+  el('div',{class:'card'},
+   el('div',{class:'lbl',style:'margin-top:0',text:'Which dapim? ('+act.length+' words)'}),chips,
+   seg('Which words?','type',[['all','All'],['k','Key Gemara words'],['s','Sugya words']]),
+   seg('Ask me','dir',[['he','Aramaic → English'],['en','English → Aramaic'],['mix','Mix']])),
+  el('div',{class:'sec',text:'📚 Words'}),
+  el('div',{class:'grid'},
+   modeBtn('rain','🌧️','Word Rain','Tap the right meaning before it lands',rain),
+   modeBtn('speed','⚡','Speed Round','60 seconds. How many?',speed),
+   modeBtn('flash','🃏','Flashcards','Swipe: know it or not',flash),
+   modeBtn('mem','🧠','Memory Pairs','1 or 2 players',memMenu),
+   modeBtn('build','🧩','Build the Line','Put the Gemara\'s words in order',build,true)),
+  el('div',{class:'sec',text:'⚖️ The Sugya'}),
+  el('div',{class:'grid'},
+   modeBtn('cases','🐄','Who Pays?','You are the dayan. Rule on the case',()=>runCases()),
+   modeBtn('said','🗣️','Who Said It?','Match the opinion to the Chacham',()=>runSaid()),
+   modeBtn('korban','🔥','Chatat or Asham?','Rabbi Yirmeya\'s four cases',()=>runKorban()),
+   modeBtn('cow','🏓','Cow Ping-Pong','Rabbi Zeira\'s 100-90-80-70',cow),
+   modeBtn('exam','🎓','The Bechina','15 mixed questions. No hints. Get a grade.',exam,true)),
+  el('button',{class:'btn alt',text:'📖 Word list & progress',onclick:wordList}),
+  el('button',{class:'btn alt',text:(S.sound?'🔊 Sound on':'🔇 Sound off'),onclick:()=>{S.sound=!S.sound;save();home()}}))}
+
+/* ---------- RESULTS ---------- */
+function finish(o){ // {key,title,s(stars),n(score for best),head,line,xp,miss,again}
+ touchStreak();S.xp+=o.xp||0;const b=S.best[o.key]||{s:0,n:null};let rec=false;
+ if(o.s>b.s)b.s=o.s;if(o.n!=null&&(b.n==null||(o.lower?o.n<b.n:o.n>b.n))){rec=b.n!=null;b.n=o.n}S.best[o.key]=b;save();
+ beep(o.s>=2?'win':'ok');
+ screen(o.title,
+  el('div',{class:'card center pop'},el('div',{class:'stars',text:stars(o.s)}),el('h1',{text:o.head,style:'font-size:30px;margin-top:6px'}),
+   el('div',{class:'muted',text:o.line||''}),rec?el('div',{style:'color:var(--gold);font-weight:700;margin-top:6px',text:'🏆 New best!'}):null,
+   el('div',{style:'margin-top:8px',text:'+'+(o.xp||0)+' ⭐'})),
+  o.miss&&o.miss.length?[el('div',{class:'sec',text:'🔁 Go over these'}),o.miss.map(m=>el('div',{class:'miss'},el('div',{dir:'auto',class:m.qHe?'he':'',style:m.qHe?'font-size:22px':'',text:m.q}),el('div',{},'✅ ',el('b',{dir:'auto',class:m.aHe?'he':'',style:m.aHe?'font-size:20px':'',text:m.ans})),m.why?el('div',{class:'muted',dir:'auto',style:'margin-top:4px',text:m.why}):null))]:null,
+  el('button',{class:'btn',text:'Play again',onclick:o.again}),el('button',{class:'btn alt',text:'Home',onclick:home}))}
+const pctStars=p=>p>=.9?3:p>=.7?2:p>=.4?1:0;
+function need(arr,n,what){if(arr.length>=n)return false;screen('Not enough yet',el('div',{class:'card center'},el('div',{class:'big',text:'📚'}),el('p',{text:'Not enough '+what+' for the dapim you picked. Add more dapim on the home screen.'})),el('button',{class:'btn',text:'Home',onclick:home}));return true}
+
+/* ---------- QUIZ ENGINE ---------- */
+function quiz(cfg){ // {key,title,qs,exam,again}
+ let i=0,right=0;const miss=[];
+ function show(){const Q=cfg.qs[i];let done=false;
+  const why=el('div');const nextB=el('button',{class:'btn',style:'display:none',text:i===cfg.qs.length-1?'Finish':'Next →',onclick:next});
+  const opts=el('div',{class:'opts'},Q.opts.map(o=>{const b=el('button',{class:'opt'+(o.he?' he':''),text:o.t,onclick:()=>{if(done)return;done=true;
+    if(o.ok){right++;beep('ok')}else{beep('no');miss.push({q:Q.q,qHe:Q.qHe,ans:Q.ans,aHe:!!(Q.opts.find(x=>x.ok)||{}).he,why:Q.why})}
+    mark(Q.w,o.ok);
+    if(cfg.exam){b.classList.add('ok');b.style.borderColor='var(--gold)';b.style.background='var(--card)';later(next,350);return}
+    [...opts.children].forEach((c,k)=>{c.disabled=true;if(Q.opts[k].ok)c.classList.add('ok')});if(!o.ok)b.classList.add('no','shake');
+    if(Q.why)why.replaceWith(el('div',{class:'why pop',dir:'auto',text:Q.why}));
+    nextB.style.display='block';if(!Q.why&&o.ok)later(next,650)}});return b}));
+  screen(cfg.title,
+   el('div',{class:'prog'},el('span',{text:(i+1)+' / '+cfg.qs.length}),el('div',{class:'bar'},el('i',{style:'width:'+100*i/cfg.qs.length+'%'})),el('span',{text:cfg.exam?'🎓':'✅ '+right})),
+   el('div',{class:'q'},el('span',{class:'tag',text:'DAF '+Q.d+(Q.sub?' · '+Q.sub:'')}),el('div',{class:Q.qHe?'he':'',text:Q.q})),opts,why,nextB)}
+ function next(){i++;if(i<cfg.qs.length)return show();const p=right/cfg.qs.length;
+  finish({key:cfg.key,title:cfg.title,s:pctStars(p),n:Math.round(p*100),head:cfg.exam?gradeName(p):right+' / '+cfg.qs.length,line:cfg.exam?right+' / '+cfg.qs.length+' · '+Math.round(p*100)+'%':(p===1?'Perfect! Kol hakavod!':p>=.7?'Strong ruling, dayan.':'Have another look at the daf and try again.'),xp:right*(cfg.exam?2:1),miss,again:cfg.again})}
+ show()}
+const gradeName=p=>p>=.9?'Metzuyan! 🏆':p>=.75?'Tov Me\'od':p>=.6?'Tov':p>=.4?'Nearly there':'Back to the daf';
+function runCases(){const pool=inDaf(CASES);if(need(pool,3,'cases'))return;quiz({key:'cases',title:'Who Pays?',qs:shuffle(pool).slice(0,8).map(caseQ),again:runCases})}
+function runSaid(){const pool=inDaf(SAID);if(need(pool,3,'statements'))return;quiz({key:'said',title:'Who Said It?',qs:shuffle(pool).slice(0,8).map(saidQ),again:runSaid})}
+function runKorban(){const rule=[
+  {d:'36a',q:'A false oath that DENIES MONEY he owes brings a…',opts:shuffle([{t:'Asham',ok:true},{t:'Chatat',ok:false}]),ans:'Asham',why:'כְּפִירַת מָמוֹן — אָשָׁם.'},
+  {d:'36a',q:'A false oath that is only "a statement of the lips" (no money saved) brings a…',opts:shuffle([{t:'Chatat',ok:true},{t:'Asham',ok:false}]),ans:'Chatat',why:'בִּיטּוּי שְׂפָתַיִם — חַטָּאת.'}];
+ quiz({key:'korban',title:'Chatat or Asham?',qs:[...rule,...korbanQs()],again:runKorban})}
+function exam(){const ws=pickWords(6),cs=inDaf(CASES),ss=inDaf(SAID);if(need(ws,6,'words')||need(cs,3,'cases'))return;
+ const qs=shuffle([...ws.map(w=>vocabQ(w,4,'mix')),...shuffle(cs).slice(0,6).map(caseQ),...shuffle(ss).slice(0,3).map(saidQ)]);
+ quiz({key:'exam',title:'The Bechina',qs,exam:true,again:exam})}
+
+/* ---------- SPEED ROUND ---------- */
+function speed(){if(need(active(),6,'words'))return;let t=60,score=0,wrong=0,lock=false;const miss=[];let queue=[];
+ const tEl=el('span',{text:'⏱ 60'}),sEl=el('span',{text:'✅ 0'}),bar=el('i',{style:'width:100%'}),qEl=el('div'),oEl=el('div',{class:'opts'});
+ screen('Speed Round',el('div',{class:'hud'},tEl,sEl),el('div',{class:'bar',style:'margin-bottom:10px'},bar),qEl,oEl);
+ const iv=setInterval(()=>{t--;tEl.textContent='⏱ '+Math.max(0,t);bar.style.width=(100*t/60)+'%';if(t<=0)end()},1000);cleanups.push(()=>clearInterval(iv));
+ function ask(){if(!queue.length)queue=pickWords(40);const Q=vocabQ(queue.shift());lock=false;
+  qEl.replaceChildren(el('div',{class:'q pop'},el('span',{class:'tag',text:'DAF '+Q.d}),el('div',{class:Q.qHe?'he':'',text:Q.q})));
+  oEl.replaceChildren(...Q.opts.map(o=>{const b=el('button',{class:'opt'+(o.he?' he':''),text:o.t,onclick:()=>{if(lock)return;lock=true;mark(Q.w,o.ok);
+    if(o.ok){score++;sEl.textContent='✅ '+score;beep('ok');b.classList.add('ok');later(ask,180)}
+    else{wrong++;beep('no');b.classList.add('no');[...oEl.children].forEach((c,k)=>{if(Q.opts[k].ok)c.classList.add('ok')});miss.push({q:Q.q,qHe:Q.qHe,ans:Q.ans,aHe:!Q.qHe});later(ask,900)}}});return b}))}
+ function end(){clearInterval(iv);finish({key:'speed',title:'Speed Round',s:score>=20?3:score>=12?2:score>=6?1:0,n:score,head:score+' words',line:wrong?wrong+' wrong':'No mistakes!',xp:score,miss:miss.slice(0,8),again:speed})}
+ ask()}
+
+/* ---------- WORD RAIN ---------- */
+function rain(){if(need(active(),6,'words'))return;let lives=3,score=0,streak=0,level=1,tiles=[],Q=null,busy=false,last=0,raf=0,alive=true;const miss=[];let queue=[];
+ const lEl=el('span',{text:'❤️❤️❤️'}),sEl=el('span',{text:'0'}),lvEl=el('span',{class:'pill',text:'Level 1'});
+ const prompt=el('div',{class:'q',style:'min-height:76px;padding:10px'});const arena=el('div',{class:'arena'});
+ screen('Word Rain',el('div',{class:'hud'},lEl,lvEl,sEl),prompt,el('div',{style:'height:8px'}),arena);
+ cleanups.push(()=>{alive=false;cancelAnimationFrame(raf)});
+ function spawn(){if(!alive)return;if(!queue.length)queue=pickWords(30);Q=vocabQ(queue.shift(),3);busy=false;arena.replaceChildren();tiles=[];
+  prompt.replaceChildren(el('span',{class:'tag',text:'DAF '+Q.d+' · CATCH THE MEANING'}),el('div',{class:Q.qHe?'he':'',style:Q.qHe?'font-size:30px':'font-size:18px',text:Q.q}));
+  const H=arena.clientHeight||360,T=Math.max(3.2,7.5-level*.45);
+  shuffle([0,1,2]).forEach((col,k)=>{const o=Q.opts[k];const e=el('div',{class:'tile'+(o.he?' he':''),text:o.t,style:'left:'+(col*33.33+1.2)+'%'});
+   const t={e,o,y:-70-k*55-Math.random()*30,v:H/T};e.addEventListener('pointerdown',ev=>{ev.preventDefault();hit(t)});arena.append(e);tiles.push(t);e.style.transform='translateY('+t.y+'px)'})}
+ function hit(t){if(busy||!alive)return;if(t.o.ok){busy=true;score++;streak++;t.e.classList.add('ok');beep('ok');mark(Q.w,true);sEl.textContent=score+(streak>=3?' 🔥'+streak:'');
+   if(score%5===0){level++;lvEl.textContent='Level '+level}later(spawn,350)}
+  else{t.e.classList.add('no');t.dead=true;lose()}}
+ function lose(){streak=0;lives--;beep('no');mark(Q.w,false);lEl.textContent='❤️'.repeat(Math.max(0,lives))+'🖤'.repeat(3-Math.max(0,lives));
+  if(!miss.some(m=>m.q===Q.q))miss.push({q:Q.q,qHe:Q.qHe,ans:Q.ans,aHe:!Q.qHe});
+  if(lives<=0){busy=true;tiles.forEach(t=>{if(t.o.ok)t.e.classList.add('ok')});later(end,900)}}
+ function loop(ts){if(!alive)return;const dt=Math.min(.05,(ts-last)/1000||0);last=ts;
+  if(!busy&&Q){const H=arena.clientHeight||360;for(const t of tiles){t.y+=t.v*dt;t.e.style.transform='translateY('+t.y+'px)';
+    if(t.o.ok&&t.y+t.e.offsetHeight>=H-6){busy=true;t.e.classList.add('ok');lose();if(lives>0)later(spawn,1000);break}}}
+  raf=requestAnimationFrame(loop)}
+ function end(){alive=false;finish({key:'rain',title:'Word Rain',s:score>=25?3:score>=15?2:score>=7?1:0,n:score,head:score+' caught',line:'Reached level '+level,xp:score,miss:miss.slice(0,8),again:rain})}
+ spawn();raf=requestAnimationFrame(loop)}
+
+/* ---------- FLASHCARDS ---------- */
+function flash(){if(need(active(),4,'words'))return;const deck=pickWords(12);let queue=deck.slice(),first=0,seen=new Set(),flipped=false;
+ function show(){if(!queue.length)return finish({key:'flash',title:'Flashcards',s:pctStars(first/deck.length),n:null,head:first+' / '+deck.length+' first time',line:'You kept going until you knew them all.',xp:deck.length,again:flash});
+  const w=queue[0];flipped=false;const en=el('div',{class:'en',style:'visibility:hidden',text:w.en}),hint=el('div',{class:'hint',text:'Tap to flip · swipe → know it · ← again'});
+  const card=el('div',{class:'fc pop'},el('span',{class:'pill',text:'DAF '+w.d}),el('div',{class:'he',style:'margin-top:10px',text:w.he}),en,hint);
+  let sx=null,dx=0;
+  card.addEventListener('pointerdown',e=>{sx=e.clientX;dx=0;try{card.setPointerCapture(e.pointerId)}catch(_){}});
+  card.addEventListener('pointermove',e=>{if(sx==null)return;dx=e.clientX-sx;card.style.transform='translateX('+dx+'px) rotate('+dx/18+'deg)'});
+  const up=()=>{if(sx==null)return;sx=null;if(dx>80)return ans(true);if(dx<-80)return ans(false);card.style.transform='';if(Math.abs(dx)<10)flip()};
+  card.addEventListener('pointerup',up);card.addEventListener('pointercancel',()=>{sx=null;card.style.transform=''});
+  function flip(){flipped=true;en.style.visibility='visible';hint.textContent='Did you know it?';beep('tap')}
+  function ans(ok){if(!flipped&&ok){/* allow confident swipe */}if(ok&&!seen.has(w))first++;seen.add(w);mark(w,ok);beep(ok?'ok':'no');queue.shift();if(!ok)queue.splice(Math.min(3,queue.length),0,w);show()}
+  screen('Flashcards',el('div',{class:'prog'},el('span',{text:(deck.length-new Set(queue).size)+' / '+deck.length+' known'}),el('div',{class:'bar'},el('i',{style:'width:'+100*(deck.length-new Set(queue).size)/deck.length+'%'}))),
+   card,el('div',{class:'row'},el('button',{class:'btn red',text:'← Again',onclick:()=>ans(false)}),el('button',{class:'btn green',text:'Know it →',onclick:()=>ans(true)})))}
+ show()}
+
+/* ---------- MEMORY ---------- */
+function memMenu(){if(need(active(),6,'words'))return;screen('Memory Pairs',el('div',{class:'card center'},el('div',{class:'big',text:'🧠'}),el('p',{text:'Match each Aramaic word with its meaning.'})),
+ el('button',{class:'btn',text:'1 player',onclick:()=>mem(1)}),el('button',{class:'btn alt',text:'2 players — pass the phone',onclick:()=>mem(2)}))}
+function mem(players){const ws=pickWords(6);const cards=shuffle(ws.flatMap(w=>[{w,he:true,t:w.he},{w,he:false,t:w.en}]));
+ let open=[],lock=false,moves=0,found=0,turn=0;const sc=[0,0];const hud=el('div',{class:'hud'});const grid=el('div',{class:'mem'});
+ function drawHud(){hud.replaceChildren(...(players===1?[el('span',{text:'Moves: '+moves}),el('span',{text:found+' / 6'})]:[el('span',{style:turn===0?'color:var(--gold)':'',text:(turn===0?'▶ ':'')+'P1: '+sc[0]}),el('span',{style:turn===1?'color:var(--gold)':'',text:(turn===1?'▶ ':'')+'P2: '+sc[1]})]))}
+ cards.forEach(c=>{c.e=el('button',{class:'mc down',text:'?',onclick:()=>tap(c)});grid.append(c.e)});
+ function face(c,up){c.e.className='mc '+(up?'up'+(c.he?' he':''):'down');c.e.textContent=up?c.t:'?'}
+ function tap(c){if(lock||c.done||open.includes(c))return;beep('tap');face(c,true);open.push(c);if(open.length<2)return;moves++;lock=true;const [a,b]=open;
+  if(a.w===b.w&&a.he!==b.he){later(()=>{a.done=b.done=true;a.e.classList.add('done');b.e.classList.add('done');beep('ok');mark(a.w,true);found++;sc[turn]++;open=[];lock=false;drawHud();if(found===6)later(end,500)},350)}
+  else{later(()=>{face(a,false);face(b,false);open=[];lock=false;turn=players===2?1-turn:0;drawHud()},950)}
+  drawHud()}
+ function end(){if(players===1)finish({key:'mem',title:'Memory Pairs',s:moves<=9?3:moves<=13?2:1,n:moves,lower:true,head:moves+' moves',line:'Fewer moves = more stars',xp:6,again:()=>mem(1)});
+  else finish({key:'mem2',title:'Memory Pairs',s:3,n:null,head:sc[0]===sc[1]?'It\'s a draw!':'Player '+(sc[0]>sc[1]?1:2)+' wins!',line:sc[0]+' – '+sc[1],xp:6,again:()=>mem(2)})}
+ screen('Memory Pairs',hud,grid);drawHud()}
+
+/* ---------- BUILD THE LINE ---------- */
+function build(){const pool=inDaf(LINES.map(l=>({d:l[0],p:l[1],en:l[2]})));if(need(pool,3,'lines'))return;const set=shuffle(pool).slice(0,6);let i=0,pts=0;const miss=[];
+ function show(){const L=set[i];let placed=[],tries=0,hinted=false;let bank=shuffle(L.p.map((t,k)=>({t,k})));if(L.p.length>1&&bank.every((b,k)=>b.t===L.p[k]))bank.reverse();
+  const slot=el('div',{class:'slot he'}),poolEl=el('div',{class:'pool he'}),msg=el('div',{class:'center muted',style:'min-height:24px;margin-top:8px'}),hintEl=el('div',{class:'why',style:'display:none',text:L.en});
+  const check=el('button',{class:'btn',text:'Check',onclick:doCheck});
+  function draw(){slot.replaceChildren(...placed.map(b=>el('button',{class:'pc',text:b.t,onclick:()=>{placed=placed.filter(x=>x!==b);beep('tap');draw()}})));
+   poolEl.replaceChildren(...bank.filter(b=>!placed.includes(b)).map(b=>el('button',{class:'pc',text:b.t,onclick:()=>{placed.push(b);beep('tap');draw()}})));
+   check.style.visibility=placed.length===L.p.length?'visible':'hidden'}
+  function doCheck(){tries++;if(placed.every((b,k)=>b.t===L.p[k])){beep('ok');if(tries===1&&!hinted)pts++;step2()}else{beep('no');slot.classList.add('shake');later(()=>slot.classList.remove('shake'),500);msg.textContent='Not quite — tap a word to take it back.';if(tries===1)miss.push({q:L.p.join(' '),qHe:true,ans:L.en})}}
+  function step2(){const ds=shuffle(LINES.filter(x=>x[2]!==L.en)).slice(0,2).map(x=>x[2]);let done=false;
+   const opts=el('div',{class:'opts'},shuffle([L.en,...ds]).map(t=>{const b=el('button',{class:'opt',text:t,onclick:()=>{if(done)return;done=true;const ok=t===L.en;if(ok){pts++;beep('ok')}else{beep('no');b.classList.add('no');if(!miss.some(m=>m.ans===L.en))miss.push({q:L.p.join(' '),qHe:true,ans:L.en})}
+     [...opts.children].forEach(c=>{c.disabled=true;if(c.textContent===L.en)c.classList.add('ok')});later(next,ok?700:1500)}});return b}));
+   screen('Build the Line',prog(),el('div',{class:'q he pop',style:'font-size:28px',text:L.p.join(' ')}),el('div',{class:'center muted',style:'margin-top:10px',text:'Now — what does it mean?'}),opts)}
+  function prog(){return el('div',{class:'prog'},el('span',{text:(i+1)+' / '+set.length}),el('div',{class:'bar'},el('i',{style:'width:'+100*i/set.length+'%'})),el('span',{text:'DAF '+L.d}))}
+  screen('Build the Line',prog(),el('div',{class:'center muted',style:'margin-bottom:8px',text:'Tap the pieces in the right order (right to left)'}),slot,poolEl,msg,hintEl,check,
+   el('button',{class:'btn alt',text:'💡 Hint: show the English',onclick:e=>{hinted=true;hintEl.style.display='block';e.target.style.display='none'}}));draw()}
+ function next(){i++;if(i<set.length)return show();const max=set.length*2;finish({key:'build',title:'Build the Line',s:pctStars(pts/max),n:pts,head:pts+' / '+max+' points',line:'1 point for the order, 1 for the meaning',xp:pts,miss,again:build})}
+ show()}
+
+/* ---------- COW PING-PONG ---------- */
+function cow(){const steps=[
+  ['Reuven owns a cow. 🐄',12,''],
+  ['Shimon RENTS it from Reuven for 100 days.',72,'אַגְרַהּ מִינֵּיהּ מְאָה יוֹמֵי'],
+  ['Reuven BORROWS his own cow back from Shimon for 90 days.',12,'וַהֲדַר שַׁיְילַהּ מִינֵּיהּ תִּשְׁעִין יוֹמֵי'],
+  ['Shimon RENTS it again for 80 days.',72,'הֲדַר אַגְרַהּ מִינֵּיהּ תְּמָנַן יוֹמֵי'],
+  ['Reuven BORROWS it again for 70 days.',12,'וַהֲדַר שַׁיְילַהּ מִינֵּיהּ שִׁבְעִין יוֹמֵי'],
+  ['…and the cow dies at Reuven\'s, during the borrowing. 💀',12,'וּמֵתָה בְּתוֹךְ יְמֵי שְׁאֵלָתָהּ']];
+ let i=0;const cowEl=el('div',{class:'cow',text:'🐄'}),cap=el('div',{class:'q',style:'margin-top:10px'}),btn=el('button',{class:'btn',text:'Next →',onclick:step});
+ screen('Cow Ping-Pong',el('div',{class:'field'},el('div',{class:'who l'},el('span',{text:'🧑‍🌾'}),'Reuven (owner)'),el('div',{class:'who r'},el('span',{text:'🧔'}),'Shimon (renter)'),cowEl),cap,btn);
+ function draw(){const s=steps[i];cowEl.style.left=s[1]+'%';if(i===steps.length-1){cowEl.textContent='💀';cowEl.style.transform='rotate(180deg)'}
+  cap.replaceChildren(el('span',{class:'tag',text:'DAF 35b · STEP '+(i+1)+' OF '+steps.length}),el('div',{text:s[0]}),s[2]?el('div',{class:'he',style:'font-size:24px;color:var(--gold)',text:s[2]}):null);
+  btn.textContent=i===steps.length-1?'So… how many cows? →':'Next →';if(i)beep('tap')}
+ function step(){if(i<steps.length-1){i++;draw();return}
+  const cs=CASES.filter(c=>c.d==='35b'&&/Zeira|Difti|Mar bar/.test(c.q)).map(caseQ);
+  cs.push({d:'35b',q:'According to Mar bar Rav Ashi, which cow does the renter get to keep forever?',opts:shuffle([{t:'The one for the borrowing',ok:true},{t:'The one for the renting',ok:false},{t:'Both',ok:false},{t:'Neither',ok:false}]),ans:'The one for the borrowing',why:'דִּשְׁאֵלָה קָנֵי לִגְמָרֵי; דִּשְׂכִירוּת — he works with it for the rental days and gives it back.'});
+  quiz({key:'cow',title:'Cow Ping-Pong',qs:cs,again:cow})}
+ draw()}
+
+/* ---------- WORD LIST ---------- */
+function wordList(){let asking=false;const resetWrap=el('div');
+ function drawReset(){resetWrap.replaceChildren(asking?el('div',{class:'card center'},el('p',{text:'Wipe all stars, bests and word progress?'}),el('div',{class:'row'},el('button',{class:'btn red',text:'Yes, reset',onclick:()=>{const snd=S.sound;S=JSON.parse(JSON.stringify(DEF));S.sound=snd;save();home()}}),el('button',{class:'btn alt',text:'Cancel',onclick:()=>{asking=false;drawReset()}}))):el('button',{class:'btn alt',text:'Reset progress',onclick:()=>{asking=true;drawReset()}}))}
+ const weak=W.filter(w=>S.box[w.he]===0);
+ screen('Word list',
+  weak.length?el('div',{class:'card'},el('div',{class:'lbl',style:'margin-top:0',text:'Needs work ('+weak.length+')'}),el('div',{class:'list'},weak.map(row))):null,
+  DAFS.map(d=>{const ws=W.filter(w=>w.d===d),k=ws.filter(w=>box(w)>=2).length;return el('div',{class:'card'},el('div',{class:'lbl',style:'margin-top:0',text:'Daf '+d+' · '+k+' / '+ws.length+' known'}),el('div',{class:'list'},ws.map(row)))}),resetWrap);
+ function row(w){const b=box(w);return el('div',{class:'w'},el('div',{class:'he',text:w.he}),el('div',{style:'text-align:right'},el('span',{text:w.en}),el('div',{},[0,1,2].map(k=>el('i',{class:'dot'+(k<b?' f':'')})))))}
+ drawReset()}
+
+window.__dafdash={home,rain,speed,flash,mem,build,runCases,runSaid,runKorban,cow,exam,wordList,vocabQ,W};
+home();
+if('serviceWorker' in navigator&&location.protocol==='https:'){try{navigator.serviceWorker.register('sw.js').catch(()=>{})}catch(e){}}
+})();
+</script>
+</body>
+</html>
