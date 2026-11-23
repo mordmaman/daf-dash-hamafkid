@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Daf Dash: HaMafkid</title>
-<meta name="description" content="Revision games for Bava Metzia, Perek HaMafkid (33b–36a): vocab and the sugya.">
+<meta name="description" content="Revision games for Bava Metzia, Perek HaMafkid (33b–36b): vocab and the sugya.">
 <meta name="theme-color" content="#0f1830">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon-192.png">
@@ -114,12 +114,12 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 
 <script>
 /* =====================================================================
-   DAF DASH — Bava Metzia, Perek HaMafkid (33b–36a)
+   DAF DASH — Bava Metzia, Perek HaMafkid (33b–36b)
    CONTENT lives in this first block so it is easy to extend as the
    shiur moves on. Add words / cases / phrases with the next daf tag
    and add that daf to DAFS — everything else updates by itself.
    ===================================================================== */
-const DAFS = ['33b','34a','34b','35a','35b','36a'];
+const DAFS = ['33b','34a','34b','35a','35b','36a','36b'];
 
 /* Words: [daf, type, Hebrew/Aramaic, English, confusion-group?]
    type 'k' = key Gemara word (comes up everywhere), 's' = word from this sugya */
@@ -315,6 +315,45 @@ const WORDS = [
 ['36a','k','אַמַּאי','why?','why'],
 ['36a','k','נֵימָא לֵיהּ','let him say to him'],
 ['36a','s','כְּדֶרֶךְ הַשּׁוֹמְרִים','the way guardians guard'],
+['36b','s','עַל דַּעַת אִשְׁתּוֹ וּבָנָיו','with his wife and children in mind'],
+['36b','k','דַּיְקָא נָמֵי','the exact wording shows it too'],
+['36b','s','לַאֲחֵרִים','to other people'],
+['36b','k','לִיתְנֵי','it should have taught'],
+['36b','k','סְתָמָא','plainly, with no details'],
+['36b','s','אַתְּ מְהֵימְנַתְּ לִי','I trust you'],
+['36b','s','בִּשְׁבוּעָה','with an oath','swear'],
+['36b','k','הַאיְךְ','that other person'],
+['36b','s','פָּשַׁע בָּהּ','he was careless with it','negl'],
+['36b','s','יָצָאת לַאֲגַם','it went out to the marsh'],
+['36b','k','מִשְּׁמֵיהּ דְּ…','in the name of…'],
+['36b','s','דַּיָּינָא','a judge'],
+['36b','k','כִּי הַאי דִּינָא','like this ruling'],
+['36b','s','תְּחִילָּתוֹ בִּפְשִׁיעָה','it began with carelessness','negl'],
+['36b','s','סוֹפוֹ בְּאוֹנֶס','it ended with an accident','died'],
+['36b','s','הַבְלָא דְאַגְמָא','the air of the marsh','air'],
+['36b','s','קַטְלַהּ','killed it'],
+['36b','s','מַלְאַךְ הַמָּוֶת','the Angel of Death'],
+['36b','k','מָה לִי הָכָא וּמָה לִי הָתָם','what difference does it make, here or there?','here'],
+['36b','k','וּמוֹדֵי','and he agrees'],
+['36b','s','הֲדַרָא לְבֵי מָרַהּ','it came back to its owner\'s house'],
+['36b','k','לֵיכָּא לְמֵימַר','you cannot say','prove'],
+['36b','k','כֹּל הֵיכָא דְּ…','wherever…'],
+['36b','s','שַׁבְקַהּ','he left it alone'],
+['36b','k','לְדִידָךְ','according to you','acc'],
+['36b','k','לְדִידִי','according to me','acc'],
+['36b','k','שַׁנִּי לֵיהּ','he answered him'],
+['36b','k','כְּלָל','at all'],
+['36b','s','רָאשֵׁי צוּקִין','the tops of cliffs'],
+['36b','s','נָפְלָה','it fell'],
+['36b','s','אַוֵּירָא דְהַר','the air of the mountain','air'],
+['36b','s','אוּבְצָנָא דְהַר','the tiredness from climbing the mountain'],
+['36b','s','מִרְעֶה שָׁמֵן וְטוֹב','a rich, good pasture'],
+['36b','s','לְתוֹקְפָּהּ','to hold on to it firmly'],
+['36b','s','תְּקָפַתּוּ','it overpowered him'],
+['36b','k','אִיבְּעִי לֵיהּ','he should have'],
+['36b','k','לָא צְרִיכָא','it is only needed for a case where…'],
+['36b','k','הֲלָכָה כְּ…','the halacha follows…'],
+['36b','s','חָלוּק הָיָה','he disagreed'],
 ];
 
 /* Lines from the daf to rebuild: [daf, [pieces in order], English] */
@@ -338,6 +377,12 @@ const LINES = [
 ['36a',['שׁוֹמֵר','שֶׁמָּסַר','לְשׁוֹמֵר'],'A guardian who handed over to a guardian'],
 ['36a',['אֵין רְצוֹנִי','שֶׁיְּהֵא פִּקְדוֹנִי','בְּיַד אַחֵר'],'I do not want my deposit to be in someone else\'s hand'],
 ['36a',['הָכָא','בְּמַאי','עָסְקִינַן'],'What case are we dealing with here?'],
+['36b',['עַל דַּעַת','אִשְׁתּוֹ וּבָנָיו','הוּא מַפְקִיד'],'He deposits it with the guardian\'s wife and children in mind'],
+['36b',['אַתְּ מְהֵימְנַתְּ לִי','בִּשְׁבוּעָה','הַאיְךְ','לָא מְהֵימַן לִי','בִּשְׁבוּעָה'],'I trust you with an oath; that other person I do not trust with an oath'],
+['36b',['תְּחִילָּתוֹ','בִּפְשִׁיעָה','וְסוֹפוֹ','בְּאוֹנֶס'],'It began with carelessness and ended with an accident'],
+['36b',['הַבְלָא','דְאַגְמָא','קַטְלַהּ'],'The air of the marsh killed it'],
+['36b',['מַלְאַךְ הַמָּוֶת','מָה לִי הָכָא','וּמָה לִי הָתָם'],'The Angel of Death — what difference does it make, here or there?'],
+['36b',['שֶׁהָיָה לוֹ','לְתוֹקְפָּהּ','וְלֹא תְּקָפָהּ'],'He should have held on to it, and he did not'],
 ];
 
 /* Cases: {d: daf, q, o:[CORRECT, wrong, wrong, …], y: why} — first option is the right one */
@@ -388,7 +433,23 @@ const CASES = [
 {d:'36a',q:'The gardener went to the wedding and left the spades with the old woman. They were stolen and Rav exempted him. Why is that NOT proof that Rav holds a guardian who hands over is exempt?',o:['The gardeners themselves left their spades with that old woman every day','The old woman was paid','The gardener swore','Spades are not worth much'],y:'שָׁאנֵי הָתָם דְּכֹל יוֹמָא נָמֵי אִינְהוּ גּוּפַיְיהוּ גַּבַּהּ דְּהַהִיא סָבְתָּא הֲווֹ מַפְקְדִי — they cannot say "we do not want her".'},
 {d:'36a',q:'Rabbi Abba bar Memel asks on Rabbi Yochanan from our Mishnah (the renter who lent the cow). How does Rabbi Ami answer?',o:['The owner gave the renter permission to lend it','The Mishnah is like Rav','The cow died before he lent it','The renter paid extra'],y:'הָכָא בְּמַאי עָסְקִינַן? בְּשֶׁנָּתְנוּ לוֹ רְשׁוּת הַבְּעָלִים לְהַשְׁאִיל.'},
 {d:'36a',q:'"If the owner gave permission, the borrower should pay the OWNER!" What is the answer?',o:['The owner said "lend it as you see fit" — so the borrower is the renter\'s borrower','The owner forgave the debt','Rabbi Yosei disagrees','The borrower already swore'],y:'דַּאֲמַרוּ לֵיהּ: לְדַעְתָּךְ.'},
-{d:'36a',q:'A Mishnah says: if he gave the coins to his SMALL children to guard, he is liable. What does Rami bar Chama work out from that?',o:['If he gave them to his grown-up children he is exempt — so why can the owner not say "I do not want it with someone else"?','Children can never be guardians','Coins must be buried in the ground','He is liable either way'],y:'טַעְמָא דִּקְטַנִּים, הָא גְּדוֹלִים — פָּטוּר. A question on Rabbi Yochanan. Rava\'s answer is on 36b…'},
+{d:'36a',q:'A Mishnah says: if he gave the coins to his SMALL children to guard, he is liable. What does Rami bar Chama work out from that?',o:['If he gave them to his grown-up children he is exempt — so why can the owner not say "I do not want it with someone else"?','Children can never be guardians','Coins must be buried in the ground','He is liable either way'],y:'טַעְמָא דִּקְטַנִּים, הָא גְּדוֹלִים — פָּטוּר. A question on Rabbi Yochanan. Rava\'s answer is on 36b.'},
+{d:'36b',q:'A guardian gave the coins to his grown-up son to look after. Why can the owner NOT say "I do not want my deposit with someone else"?',o:['Anyone who deposits knows the guardian\'s wife and children will help guard it','Grown-up children are paid guardians','The owner gave permission in writing','Coins do not need guarding'],y:'Rava: כׇּל הַמַּפְקִיד עַל דַּעַת אִשְׁתּוֹ וּבָנָיו הוּא מַפְקִיד.'},
+{d:'36b',q:'The Chachamim of Nehardea say the Mishnah\'s wording proves this. How?',o:['It says "HIS small son and daughter" — so with other people he is liable whether they are big or small; otherwise it would just say "small children"','It mentions coins and not animals','It says "liable" twice','It mentions a locked door'],y:'דַּיְקָא נָמֵי… מִכְלָל דְּלַאֲחֵרִים לָא שְׁנָא גְּדוֹלִים וְלָא שְׁנָא קְטַנִּים — חַיָּיב, דְּאִם כֵּן לִיתְנֵי קְטַנִּים סְתָמָא.'},
+{d:'36b',q:'What does Rava rule about a guardian who handed the deposit to another guardian?',o:['Liable — even an unpaid guardian who handed it to a paid one','Exempt — like Rav','Liable only if the guarding got worse','Exempt if the second guardian swears'],y:'אָמַר רָבָא, הִלְכְתָא: שׁוֹמֵר שֶׁמָּסַר לְשׁוֹמֵר — חַיָּיב.'},
+{d:'36b',q:'What is RAVA\'s reason that a guardian who hands over is liable?',o:['The owner says: "I trust YOUR oath; I do not trust HIS oath"','The owner says: "I do not want my deposit with someone else"','The second guardian is always careless','He broke a promise'],y:'אַתְּ מְהֵימְנַתְּ לִי בִּשְׁבוּעָה, הַאיְךְ לָא מְהֵימַן לִי בִּשְׁבוּעָה. (The "I do not want" reason was Rabbi Yochanan\'s, as Abaye explained it on 36a.)'},
+{d:'36b',q:'The guardian was careless and the cow wandered into a marsh — but then it just died naturally. What is the din?',o:['Abaye (quoting Rabba): liable. Rava (quoting Rabba): exempt','Abaye: exempt. Rava: liable','Everyone says liable','Everyone says exempt'],y:'פָּשַׁע בָּהּ וְיָצָאת לַאֲגַם וּמֵתָה כְּדַרְכָּהּ — and each one says: any judge who does not rule this way is not a judge!'},
+{d:'36b',q:'Why does Abaye say he is liable, even if "began with carelessness, ended with an accident" is usually exempt?',o:['We say the air of the marsh killed it','A marsh belongs to nobody','The Angel of Death was not involved','He did not swear'],y:'הַבְלָא דְאַגְמָא קַטְלַהּ — so the carelessness itself caused the death.'},
+{d:'36b',q:'Why does Rava say he is exempt, even if "began with carelessness, ended with an accident" is usually liable?',o:['For the Angel of Death, what difference does it make whether it is here or there?','The air of the marsh is healthy','The owner forgave him','A cow in a marsh is still guarded'],y:'מַלְאַךְ הַמָּוֶת מָה לִי הָכָא וּמָה לִי הָתָם — it would have died anyway.'},
+{d:'36b',q:'The cow went into the marsh, came back to its owner\'s house, and then died. What does Abaye say?',o:['Exempt — you cannot say the air of the marsh killed it','Liable — he was still careless','Liable — it might have caught something','He pays half'],y:'וּמוֹדֵי אַבָּיֵי דְּאִי הֲדַרָא לְבֵי מָרַהּ וּמִתָה — דְּפָטוּר.'},
+{d:'36b',q:'A thief stole the cow from the marsh, and it died naturally in the thief\'s house. What does Rava say?',o:['Liable — even if the Angel of Death had left it alone, it would be standing in the thief\'s house','Exempt — it died naturally','Exempt — the thief must pay instead','Liable only if the thief is not found'],y:'וּמוֹדֵי רָבָא… דְּאִי שַׁבְקַהּ מַלְאַךְ הַמָּוֶת, בְּבֵיתֵיהּ דְּגַנָּבָא הֲוָה קָיְימָא.'},
+{d:'36b',q:'Abaye asks Rava: when Rabbi Abba bar Memel asked from our Mishnah, why did Rabbi Ami need to answer "the owner gave permission"? What should he have said, according to Rava?',o:['"For the Angel of Death, what difference is here or there?" — it died naturally anyway','"The air of the marsh killed it"','"The renter was careless"','"The halacha is like Rabbi Yosei"'],y:'וְלֵימָא לֵיהּ: מַלְאַךְ הַמָּוֶת מָה לִי הָכָא וּמָה לִי הָתָם!'},
+{d:'36b',q:'How does Rava answer Abaye\'s question?',o:['"According to you, who learn the reason is \'I do not want my deposit with someone else\', there is a question. According to my reason — the oath — there is no question at all"','"Rabbi Ami made a mistake"','"The Mishnah is only Rabbi Yosei"','"The cow was already ill"'],y:'לְדִידְכוּ דְּמַתְנִיתוּ אֵין רְצוֹנִי… אִיכָּא לְאוֹתֹבַהּ; לְדִידִי… לֵיכָּא לְאוֹתֹבַהּ כְּלָל. In the Mishnah it is the renter himself who swears.'},
+{d:'36b',q:'A Mishnah says: he took the animal up to the cliff tops and it fell — that is not an accident, and he is liable. What does Rami bar Chama ask on Abaye from this?',o:['If it had died naturally up there he would be exempt — but why? Say the mountain air or the tiring climb killed it!','Why is he liable if it fell?','Why did he go up a mountain at all?','Why does the Mishnah not mention a marsh?'],y:'הָא מֵתָה כְּדַרְכָּהּ — הֲרֵי זֶה אוֹנֶס וּפָטוּר. וְאַמַּאי? לֵימָא לֵיהּ: אַוֵּירָא דְהַר קַטְלַהּ, אִי נָמֵי אוּבְצָנָא דְהַר קַטְלַהּ!'},
+{d:'36b',q:'How does the Gemara answer Rami bar Chama?',o:['He took it up to a rich, good pasture — that is not careless','The mountain air is healthy','That Mishnah is not like Abaye','It was the owner\'s idea'],y:'הָכָא בְּמַאי עָסְקִינַן? שֶׁהֶעֱלָהּ לְמִרְעֶה שָׁמֵן וְטוֹב.'},
+{d:'36b',q:'If taking it up there was fine, why is he liable when it fell?',o:['He should have held on to it firmly, and he did not','Falling is always carelessness','Because the pasture was not his','He is not liable'],y:'שֶׁהָיָה לוֹ לְתוֹקְפָּהּ וְלֹא תְּקָפָהּ.'},
+{d:'36b',q:'The first part of that Mishnah says: if the animal climbed up BY ITSELF and fell, it is an accident. But he should have held it! What is the answer?',o:['It overpowered him going up and overpowered him coming down','He was asleep','It was night-time','Someone else was holding it'],y:'לָא צְרִיכָא שֶׁתְּקָפַתּוּ וְעָלְתָה, תְּקָפַתּוּ וְיָרְדָה.'},
+{d:'36b',q:'Back to our Mishnah: the renter lent out the cow and it died. Who does the halacha follow?',o:['Rabbi Yosei — the cow\'s value goes back to the owner','The Tanna Kamma — the borrower pays the renter','Neither — teku','Rabbi Meir'],y:'אָמַר רַב יְהוּדָה אָמַר שְׁמוּאֵל: הֲלָכָה כְּרַבִּי יוֹסֵי.'},
 ];
 
 /* Who said it? {d, s: statement, by: sage} */
@@ -418,6 +479,13 @@ const SAID = [
 {d:'36a',s:'A guardian who handed over to a guardian is liable.',by:'Rabbi Yochanan'},
 {d:'36a',s:'"That ruling of Rav was not said outright — it was worked out from the story of the gardeners."',by:'Rav Chisda'},
 {d:'36a',s:'He challenged Rabbi Ami from our Mishnah: "Let the owner say — I do not want my deposit with someone else!"',by:'Rabbi Abba bar Memel'},
+{d:'36b',s:'"Anyone who deposits does so with the guardian\'s wife and children in mind."',by:'Rava'},
+{d:'36b',s:'"The exact wording of the Mishnah shows it too — \'his small son and daughter\'…"',by:'The Chachamim of Nehardea'},
+{d:'36b',s:'"I trust your oath; that other person\'s oath I do not trust."',by:'Rava'},
+{d:'36b',s:'Careless, it went into the marsh and died naturally: liable — "the air of the marsh killed it".',by:'Abaye'},
+{d:'36b',s:'Careless, it went into the marsh and died naturally: exempt — "the Angel of Death, what difference is here or there?"',by:'Rava'},
+{d:'36b',s:'"Let him say: the air of the mountain killed it, or the tiredness of the mountain killed it!"',by:'Rami bar Chama'},
+{d:'36b',s:'"The halacha follows Rabbi Yosei." (Rav Yehuda quotes him.)',by:'Shmuel'},
 ];
 const SAGES = [...new Set(SAID.map(x=>x.by))];
 

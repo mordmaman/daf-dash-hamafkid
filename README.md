@@ -1,6 +1,6 @@
 # Daf Dash: HaMafkid
 
-Revision games for **Bava Metzia, Perek HaMafkid (33b–36a)**. Play it at
+Revision games for **Bava Metzia, Perek HaMafkid (33b–36b)**. Play it at
 https://mordmaman.github.io/daf-dash-hamafkid/
 
 **Words:** Word Rain · Speed Round · Flashcards · Memory Pairs · Build the Line
